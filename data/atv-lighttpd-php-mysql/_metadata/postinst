@@ -1,0 +1,56 @@
+#!/bin/sh
+
+#Rename installed config files
+#This will save changed config files during a deinstallation
+mv /etc/com.atv.web-stack.mod_fastcgi-atv.conf /etc/lighttpd/mod_fastcgi-atv.conf
+mv /etc/com.atv.web-stack.lighttpd-atv.conf /etc/lighttpd/lighttpd-atv.conf
+mv /etc/com.atv.web-stack.php.ini /etc/php.ini
+mv /etc/com.atv.web-stack.load_all.ini /etc/php.d/load_all.ini
+
+#Create needed folders
+mkdir -p /var/www
+mkdir -p /var/log/lighttpd
+
+#Set permission of the Lighttpd log folder
+chown -R daemon:_www /var/log/lighttpd
+
+
+#Copy content to /var/www/phpinfo.php
+if [ -f /var/www/phpinfo.php ]
+then
+echo""
+else
+   echo "<?PHP phpinfo ();?>" > /var/www/phpinfo.php
+fi
+
+
+#Copy demo content to /var/www/index.html
+if [ -f /var/www/index.html ]
+then
+echo""
+else
+echo '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>' > /var/www/index.html
+echo '<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">  <title>iOS Lighttpd-PHP-MySQL' >> /var/www/index.html
+echo '</title></head><body><div style="text-align: center;"><h1>Yeah, it works!</h1><h2><br>If you would ' >> /var/www/index.html
+echo 'like test your PHP configuration please click <a href="phpinfo.php">here</a>.<br><br>Cross your fingers to see ' >> /var/www/index.html
+echo 'some information about GD and MySQL and then have fun with:<br><br>ownCloud, WordPress, Contao, Textpattern, ' >> /var/www/index.html
+echo 'TYPO3, Drupal, MadeSimple,<br>WebsiteBacker, Joomla!, miniBB, MyBB, phpBB, phpMyForum <br>or other web presences :-)' >> /var/www/index.html
+echo '</h2><h2><br>The following web page will give you some more information:<br>' >> /var/www/index.html
+echo '<a target="_blank" href="http://code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack/wiki/Main">' >> /var/www/index.html
+echo 'code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack</a>' >> /var/www/index.html
+echo '</h2><br><br><br><br><h2>If you like my iOS Web Stack Composition, please support ' >> /var/www/index.html
+echo '<a href="http://www.supportunicef.org" target="_blank">UNICEF</a> with a small donation. Thank you.</h2><br></div></body></html> '>> /var/www/index.html
+fi
+
+#Start Daemons
+launchctl load -w /Library/LaunchDaemons/com.atv.lighttpd.plist
+launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
+
+#Dobble Information
+echo " "
+echo "After the installationt you have to set your MySQL root password with the command below:"
+echo "/usr/local/bin/mysql_secure_installation" 
+echo " "
+
+exit 0
+

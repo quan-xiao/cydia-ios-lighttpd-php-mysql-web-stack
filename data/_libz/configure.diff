@@ -1,0 +1,14 @@
+--- zlib-1.2.7/configure.org       2012-09-17 17:53:48.000000000 -0500
++++ zlib-1.2.7/configure   2012-09-17 17:59:54.000000000 -0500
+@@ -231,8 +231,8 @@
+              SHAREDLIBV=libz.$VER$shared_ext
+              SHAREDLIBM=libz.$VER1$shared_ext
+              LDSHARED=${LDSHARED-"$cc -dynamiclib -install_name $libdir/$SHAREDLIBM -compatibility_version $VER1 -current_version $VER3"}
+-             AR="/usr/bin/libtool"
+-             ARFLAGS="-o" ;;
++             #AR="/usr/bin/libtool"
++             ARFLAGS="cq" ;;
+   *)             LDSHARED=${LDSHARED-"$cc -shared"} ;;
+   esac
+ else
+

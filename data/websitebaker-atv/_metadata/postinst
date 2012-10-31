@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ -f /var/www/websitebaker/config.php ]
+then
+echo ""
+else
+  cp /var/www/websitebaker/config.php.new /var/www/websitebaker/config.php
+  rm /var/www/websitebaker/upgrade-script.php
+fi
+
+find /var/www/websitebaker -type f | xargs chmod 644
+find /var/www/websitebaker -type d | xargs chmod 755
+
+chown -R daemon:_www /var/www/websitebaker/install 
+chown -R daemon:_www /var/www/websitebaker/pages
+chown -R daemon:_www /var/www/websitebaker/modules
+chown -R daemon:_www /var/www/websitebaker/media
+chown -R daemon:_www /var/www/websitebaker/languages
+chown -R daemon:_www /var/www/websitebaker/templates
+chown -R daemon:_www /var/www/websitebaker/temp
+
+chown daemon:_www /var/www/websitebaker/config.php
+chmod u+w /var/www/websitebaker/config.php
+

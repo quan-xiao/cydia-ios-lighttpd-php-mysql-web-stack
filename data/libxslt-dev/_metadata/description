@@ -1,0 +1,3 @@
+Libxslt is based on libxml for xml parsing, tree manipulation and XPath support
+ Libxslt is based on libxml for xml parsing, tree manipulation and XPath support.
+ This package contains the libxslt headers.

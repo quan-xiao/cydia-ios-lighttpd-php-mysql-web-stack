@@ -1,0 +1,30 @@
+MySQL relational database management system server
+ MySQL-Server Branch Version 5.1.x
+ 
+ This software was originally compiled for the AppleTV but it works on all iOS devices.
+ 
+ If you are not familiar in operation of console and shell scripting please don't install this package!
+ 
+ This package does not have a Daemon Launcher.
+ Therfore you can install it on all iOS-Devices and you can activate the MySQL server as you would like.
+ 
+ With the additional cydia packages 'lighttpd-atv' and 'php54-atv' you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards, File Servers.
+ Such as ownCloud, WebsiteBaker, Contao, TYPO3, WordPress, Joomla!, phpBB, miniBB, etc.
+ 
+ You will find the MySQL 'example' config file at /etc/my.cnf
+ You will find the MySQL database files at /var/mysql
+ 
+ To activate the MySQL server please run the command below:
+ /usr/local/bin/mysqld_safe &
+ 
+ To set your MySQL database root password, please run the command below from a ssh console after the installation:
+ /usr/local/bin/mysql_secure_installation
+ 
+ If you would like to reinitialize your database please use this command:
+ /usr/local/bin/mysql_install_db --verbose --user=daemon
+  
+ If you would like keep it simple then just install one of the cydia packages below:
+ - 'atv-lighttpd-php-mysql' for AppleTV 
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad 
+ They includes this, the above mentioned packages, example config files and daemon launchers for a whole web server solution stack.
+ 

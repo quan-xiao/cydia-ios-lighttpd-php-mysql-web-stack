@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -f /etc/lighttpd ]
+then
+   echo""
+else
+   mkdir -p /etc/lighttpd
+fi
+
+echo " "
+echo "If you have an own lighttpd config file, you can start the web server lighttpd with the command below:"
+echo "/usr/sbin/lighttpd -f'path_to_your_config_file.conf'"
+echo " "
+echo "You can place your Lighttpd config file in /etc/lighttpd/"
+echo "You can place your web content in /var/www/"
+echo " "
+

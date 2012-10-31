@@ -1,0 +1,20 @@
+A free, easy and secure, flexible and extensible management system (CMS)
+ WebsiteBaker is free, easy and secure, flexible and extensible open source content management system (CMS).
+ It helps you to create the website you want. Create new templates within minutes - powered by (X)HTML, CSS and jQuery.
+ 
+ With the cydia packages below you can use WebsiteBaker: 
+ - 'ios-lighttpd-php-mysql' for iPad/iPhone
+ - 'atv-lighttpd-php-mysql' for AppleTV
+ 
+ Please open Safari at your iOS Device and type in 'http://localhost/websitebaker'.
+ (Please use Safari. I don't know why, but e.g. Chrome creates some problems.)
+ 
+ The WebsiteBaker Setup needs an existing MySQL user and an existing MySQL database.
+ Before you start the WebsiteBaker Setup, please create it with the cydia packages 'phpmyadmin-atv'.
+ 
+ After the WebsiteBaker Setup please log in your iDevice with a ssh shell and remove the folder
+ /var/www/websitebaker/install
+ 
+ If you remove this package, please be sure that all content in /var/www/websitebaker will be deleted.
+ Your MySQL database will not be removed. 
+ 

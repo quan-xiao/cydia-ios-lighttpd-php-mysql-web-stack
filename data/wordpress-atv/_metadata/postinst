@@ -1,0 +1,7 @@
+#!/bin/sh
+
+chown -R daemon:_www /var/www/wordpress
+
+find /var/www/wordpress -type f | xargs chmod 644
+find /var/www/wordpress -type d | xargs chmod 755
+

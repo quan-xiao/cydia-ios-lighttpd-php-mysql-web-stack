@@ -1,0 +1,20 @@
+#!/bin/sh
+
+mv /etc/com.atv.mysql.my.cnf /etc/my.cnf
+
+/usr/local/bin/mysql_install_db --verbose --user=daemon 
+
+echo " "
+echo " "
+echo "You will find the database files here: /var/mysql"
+echo "You can start the Mysql server with the command below:"
+echo "/usr/local/bin/mysqld_safe &"
+echo "After that you have to set your MySQL root password:"
+echo "/usr/local/bin/mysql_secure_installation" 
+echo " "
+echo " "
+
+exit 0
+
+
+

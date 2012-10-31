@@ -1,0 +1,7 @@
+#!/bin/sh
+
+chown -R daemon:_www /var/www/owncloud/data
+chown -R daemon:_www /var/www/owncloud/apps
+chown -R daemon:_www /var/www/owncloud/config
+
+

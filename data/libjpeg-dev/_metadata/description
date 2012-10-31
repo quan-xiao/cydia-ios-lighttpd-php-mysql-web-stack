@@ -1,0 +1,3 @@
+The Independent JPEG Group's library is a library for handling JPEG files
+ A library for handling JPEG files.
+ This package contains the libjpeg headers.

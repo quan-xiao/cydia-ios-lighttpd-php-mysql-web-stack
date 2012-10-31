@@ -1,0 +1,4 @@
+Library for manipulating PNG files
+ Library for manipulating PNG files.
+ This package contains the shared PNG library.
+ Version 1.2.50 removes a potential security vulnerability so all users are recommended to upgrade immediately.

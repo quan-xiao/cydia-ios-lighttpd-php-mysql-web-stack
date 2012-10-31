@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ -f /Library/LaunchDaemons/com.atv.lighttpd.plist  ]
+then
+    launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.plist 2>&1 | true
+fi
+
+LIGHTTPD=`ps -ax | grep '[l]ighttpd' | grep 'sbin' | awk '{ print $1 }'`
+if [ "$LIGHTTPD" != "" ]; then
+ kill -s TERM $LIGHTTPD # 2>&1 | true
+fi
+
+exit 0
+
