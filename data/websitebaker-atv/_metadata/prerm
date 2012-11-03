@@ -2,3 +2,10 @@
 
 rm -r /var/www/websitebaker
 
+if [ -f /var/www/websitebaker ]
+then
+ rm -r /var/www/websitebaker
+fi
+ 
+exit 0
+

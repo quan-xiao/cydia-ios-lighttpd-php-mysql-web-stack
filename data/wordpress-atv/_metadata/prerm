@@ -1,4 +1,10 @@
 #!/bin/sh
 
-rm -r /var/www/wordpress
+
+if [ -f /var/www/wordpress ]
+then
+ rm -r /var/www/wordpress   
+fi
+ 
+exit 0
 

@@ -1,4 +1,9 @@
 #!/bin/sh
 
-rm -r /var/www/owncloud
+if [ -f /var/www/owncloud ]
+then
+ rm -r /var/www/owncloud   
+fi
+ 
+exit 0
 

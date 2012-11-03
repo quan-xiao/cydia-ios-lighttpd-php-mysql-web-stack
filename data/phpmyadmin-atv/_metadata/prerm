@@ -1,4 +1,8 @@
 #!/bin/sh
 
-rm -r /var/www/phpmyadmin
-
+if [ -f /var/www/phpmyadmin ]
+then
+ rm -r /var/www/phpmyadmin 
+fi
+ 
+exit 0

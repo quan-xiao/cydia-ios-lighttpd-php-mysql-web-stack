@@ -11,7 +11,7 @@ mkdir -p ${PKG_DEST}/etc
 mkdir -p ${PKG_DEST}/usr/local/libexec
 mkdir -p ${PKG_DEST}/Library/LaunchDaemons
 mkdir -p ${PKG_DEST}/Library/PreferenceLoader/Preferences
-
+mkdir -p ${PKG_DEST}/var/www
 
 #PHP
 cp ${PKG_DATA}/com.atv.web-stack.php.ini ${PKG_DEST}/etc/
@@ -38,3 +38,5 @@ cp  ${PKG_DATA}/com.atv.mysql.switch.plist ${PKG_DEST}/Library/LaunchDaemons/
 
 cp  ${PKG_DATA}/atv.lighttpd_mysql.png ${PKG_DEST}/Library/PreferenceLoader/Preferences/
 cp  ${PKG_DATA}/atv.lighttpd_mysql@2x.png ${PKG_DEST}/Library/PreferenceLoader/Preferences/
+
+cp  ${PKG_DATA}/adminer.php ${PKG_DEST}/var/www/
