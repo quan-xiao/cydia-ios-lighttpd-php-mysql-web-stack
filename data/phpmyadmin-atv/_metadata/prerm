@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f /var/www/phpmyadmin ]
+if [ -d /var/www/phpmyadmin ]
 then
  rm -r /var/www/phpmyadmin 
 fi

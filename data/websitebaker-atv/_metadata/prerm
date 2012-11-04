@@ -1,8 +1,7 @@
 #!/bin/sh
 
-rm -r /var/www/websitebaker
 
-if [ -f /var/www/websitebaker ]
+if [ -d /var/www/websitebaker ]
 then
  rm -r /var/www/websitebaker
 fi

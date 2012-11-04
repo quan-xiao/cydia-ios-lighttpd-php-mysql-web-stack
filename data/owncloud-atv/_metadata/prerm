@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f /var/www/owncloud ]
+if [ -d /var/www/owncloud ]
 then
  rm -r /var/www/owncloud   
 fi
