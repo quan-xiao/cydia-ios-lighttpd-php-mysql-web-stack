@@ -4,4 +4,9 @@ chown -R daemon:_www /var/www/owncloud/data
 chown -R daemon:_www /var/www/owncloud/apps
 chown -R daemon:_www /var/www/owncloud/config
 
-
+if [ -f /etc/lighttpd/lighttpd-atv.conf ]
+then
+   echo ' ' >> /etc/lighttpd/lighttpd-atv.conf
+   echo 'include "owncloud.conf"' >> /etc/lighttpd/lighttpd-atv.conf
+fi
+ 

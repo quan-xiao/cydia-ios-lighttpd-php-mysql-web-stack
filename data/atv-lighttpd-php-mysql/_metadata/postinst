@@ -34,8 +34,8 @@ echo '<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><t
 echo '</head><body><div style="text-align: center;"><h1>Yeah, it works!</h1><h2>' >> /var/www/index.html
 echo 'Now you can safeguard your MySQL installation with a few steps.<br>' >> /var/www/index.html
 echo 'The tool <a target="_blank" href="adminer.php">Adminer</a> will help you. Please click <a' >> /var/www/index.html
-echo ' target="_blank" href="adminer.php?server=localhost&username=root&sql=DELETE%20FROM%20mysql.user%20WHERE%20User='root'%20AND%20Host%20NOT%20IN%20('localhost',%20'127.0.0.1',%20'::1');%0ADELETE%20FROM%20mysql.user%20WHERE%20User='';%0ADROP%20DATABASE%20test;%0ADELETE%20FROM%20mysql.db%20WHERE%20Db='test'%20OR%20Db='test\\_%';%0AFLUSH%20PRIVILEGES;"' >> /var/www/index.html
-echo ' >here</a> and then on the buttom 'execute'.<br>In this way, the MySQL test database and a anonymous MySQL user are deleted.<br>' >> /var/www/index.html
+echo ' target="_blank" href="adminer.php?server=localhost&username=root&sql=DELETE%20FROM%20mysql.user%20WHERE%20User=&#39;root&#39;%20AND%20Host%20NOT%20IN%20(&#39;localhost&#39;,%20&#39;127.0.0.1&#39;,%20&#39;::1&#39;);%0ADELETE%20FROM%20mysql.user%20WHERE%20User=&#39;&#39;;%0ADROP%20DATABASE%20test;%0ADELETE%20FROM%20mysql.db%20WHERE%20Db=&#39;test&#39;%20OR%20Db=&#39;test\\_%&#39;;%0AFLUSH%20PRIVILEGES;"' >> /var/www/index.html
+echo ' >here</a> and then on the buttom &#39;execute&#39;.<br>In this way, the MySQL test database and a anonymous MySQL user are deleted.<br>' >> /var/www/index.html
 echo 'Only after that, you have to change the passwords for the MySQL <a target="_blank"' >> /var/www/index.html
 echo 'href="adminer.php?server=localhost&username=root&user=root&host=localhost">root user</a>.' >> /var/www/index.html
 echo '<br>' >> /var/www/index.html

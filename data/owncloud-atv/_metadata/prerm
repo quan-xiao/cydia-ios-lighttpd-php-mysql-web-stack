@@ -4,6 +4,11 @@ if [ -f /var/www/owncloud ]
 then
  rm -r /var/www/owncloud   
 fi
+
+if [ -f /etc/lighttpd/lighttpd-atv.conf ]
+then
+ sed -i '/mod_owncloud/d' /etc/lighttpd/lighttpd-atv.conf
+fi
  
 exit 0
 
