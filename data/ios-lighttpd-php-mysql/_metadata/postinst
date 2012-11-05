@@ -78,5 +78,13 @@ echo "To do that, please start Safari on you iOS device and open following site:
 echo "http://localhost"
 echo " "
 
+declare -a cydia
+cydia=($CYDIA)
+if [[ ${CYDIA+@} ]]; then
+    eval "echo 'finish:restart' >&${cydia[0]}"
+else
+    echo "Please kill or restart 'Preferences'."
+fi
+
 exit 0
 
