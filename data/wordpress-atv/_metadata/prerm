@@ -1,9 +1,10 @@
 #!/bin/sh
 
 
-if [ -d /var/www/wordpress ]
-then
- rm -r /var/www/wordpress   
+if [ $1 != upgrade ]; then
+ if [ -d /var/www/wordpress ]; then
+  rm -r /var/www/wordpress   
+ fi
 fi
  
 exit 0
