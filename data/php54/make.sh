@@ -12,12 +12,11 @@ sed -ie "s{ext/mysqlnd/php_mysqlnd_config.h{config.h{" mysqlnd_portability.h
 cd ../..
 #Patch-End
 
-#export EXTENSION_DIR="${PKG_DEST}"/usr/local/lib/php/extensions/no-debug-non-zts-20100525
 export INSTALL_ROOT="${PKG_DEST}"
 
-autoconf-2.69 
+autoconf 
 export CC="${PKG_TARG}"-gcc 
-pkg:configure  --prefix=/usr/local --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --without-pear --enable-calendar=shared --with-iconv=shared,"${PKG_ROOT}"/usr --with-curl=shared,"$(PKG_DEST_ curl)"/usr --enable-exif=shared --with-gd=shared --enable-gd-native-ttf --with-jpeg-dir="$(PKG_DEST_ _libjpeg)"/usr --with-png-dir="$(PKG_DEST_ _libpng)"/usr --with-pdo --with-sqlite3=shared --with-pdo-sqlite=shared --enable-mysqlnd=shared --with-pdo-mysql=shared,mysqlnd --with-mysql=shared,mysqlnd --with-mysqli=shared,mysqlnd --enable-mbstring=shared --with-mcrypt=shared,"$(PKG_DEST_ _libmcrypt)"/usr --with-zlib-dir --enable-zip=shared --with-bz2=shared --with-openssl=shared,"$(PKG_DEST_ openssl)"/usr --enable-gd-jis-conv --with-xsl=shared,"$(PKG_DEST_ libxslt)"/usr 
+pkg:configure  --prefix=/usr/local --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --without-pear --enable-calendar=shared --with-iconv=shared,"${PKG_ROOT}"/usr --with-curl=shared,"$(PKG_DEST_ curl)"/usr --enable-exif=shared --with-gd=shared --enable-gd-native-ttf --with-jpeg-dir="$(PKG_DEST_ _libjpeg)"/usr --with-png-dir="$(PKG_DEST_ _libpng)"/usr --with-pdo --with-sqlite3=shared --with-pdo-sqlite=shared --enable-mysqlnd=shared --with-pdo-mysql=shared,mysqlnd --with-mysql=shared,mysqlnd --with-mysqli=shared,mysqlnd --enable-mbstring=shared --with-mcrypt=shared,"$(PKG_DEST_ _libmcrypt)"/usr --with-zlib-dir="${PKG_ROOT}"/usr --enable-zip=shared --with-bz2=shared --with-openssl=shared,"$(PKG_DEST_ openssl)"/usr --enable-gd-jis-conv --with-xsl=shared --with-libxml-dir="$(PKG_DEST_ _libxml2)"/usr
 
 
 #Bad news: It could be that 'configure' found the host system libxml2 libs and includes!
@@ -27,7 +26,6 @@ pkg:configure  --prefix=/usr/local --with-config-file-path=/etc --with-config-fi
 sed -ie "s{-I/usr/include/libxml2{-I${PKG_ROOT}/usr/include/libxml2 -I${PKG_ROOT}/usr/include/libxml2/libxml{" Makefile
 
 make  
-#make install prefix="${PKG_DEST}"/usr/local datarootdir="${PKG_DEST}"/usr/local/share
 make install
 
 
