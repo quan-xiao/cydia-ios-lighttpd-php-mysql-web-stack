@@ -25,6 +25,7 @@ pkg:configure  --prefix=/usr/local --with-config-file-path=/etc --with-config-fi
 #Fastest solution -> we have to change the libxml2 search path in Makefile
 sed -ie "s{-I/usr/include/libxml2{-I${PKG_ROOT}/usr/include/libxml2 -I${PKG_ROOT}/usr/include/libxml2/libxml{" Makefile
 
+export CFLAGS='-mthumb'
 make  
 make install
 
@@ -49,6 +50,7 @@ mv  php_all_headers.tar.bz2 php/
 #We have to adjust a path in phar.phar
 cd ${PKG_DEST}/usr/local/bin
 sed -i 's\#!.*\#!/usr/local/bin/php\g' phar.phar
+sed -i 's!/home/mobile/Projects/iphone/toolchain/toolchain/sys/usr/lib!/usr/lib!' php-config 
 
 #Telesphoreo creats a bad symbolic link to phar.
 #We have to change it...
