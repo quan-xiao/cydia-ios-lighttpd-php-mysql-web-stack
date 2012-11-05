@@ -83,6 +83,7 @@ cydia=($CYDIA)
 if [[ ${CYDIA+@} ]]; then
     eval "echo 'finish:restart' >&${cydia[0]}"
 else
+    echo ""
     echo "Please kill or restart 'Preferences'."
 fi
 

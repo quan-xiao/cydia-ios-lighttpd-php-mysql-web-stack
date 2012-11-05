@@ -39,7 +39,7 @@ A whole iPad/iPhone Web Server Solution Stack Composition
  
  Furthermore a preference loader for a daemon launcher are installed.
  
- Please change your MySQL root password with the command below or install the cydia package 'phpmyadmin-atv' to do that:
+ Please change your MySQL root password with the command below or with the also installed PHP script 'http://localhost/adminer.php':
  /usr/bin/mysql_secure_installation
    
  If you would like to reinitialize your MySQL database please use this command:
