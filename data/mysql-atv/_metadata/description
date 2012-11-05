@@ -8,7 +8,7 @@ MySQL relational database management system server
  This package does not have a Daemon Launcher.
  Therfore you can install it on all iOS-Devices and you can activate the MySQL server as you would like.
  
- With the additional cydia packages 'lighttpd-atv' and 'php54-atv' you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards, File Servers.
+ With the additional cydia packages 'lighttpd-atv' and 'php54' you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards, File Servers.
  Such as ownCloud, WebsiteBaker, Contao, TYPO3, WordPress, Joomla!, phpBB, miniBB, etc.
  
  You will find the MySQL 'example' config file at /etc/my.cnf

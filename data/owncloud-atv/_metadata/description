@@ -19,10 +19,10 @@ A flexible, open source file sync and share solution
  - Quick, save and easy. Need not mutch memory.
  
  Using of MySQL:
- - You will get some errors own or two times. But that is not a problem. Reload the page and everything is fine.
+ - You will get some errors one or two times. But that is not a problem. Reload the page and everything is fine.
  - You will needs an existing MySQL user and an existing MySQL database.
- - Before you start the ownCloud Setup, please create it with the cydia packages 'phpmyadmin-atv'.
+ - Before you start the ownCloud Setup, please create these with 'adminer' or the cydia packages 'phpmyadmin-atv'.
  
- If you remove this package, please be sure that all content in /var/www/ownCloud will be deleted.
- If you use SQLite3, the database in /var/www/ownlcoud/ will be removed!
+ If you remove this package, please note that all content in /var/www/ownCloud will be deleted.
+ If you use SQLite3, a database in /var/www/ownlcoud/ will be removed!
  If you use MySQL, the database will not be removed. 

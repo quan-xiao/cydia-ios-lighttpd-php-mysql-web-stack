@@ -10,11 +10,11 @@ A free, easy and secure, flexible and extensible management system (CMS)
  (Please use Safari. I don't know why, but e.g. Chrome creates some problems.)
  
  The WebsiteBaker Setup needs an existing MySQL user and an existing MySQL database.
- Before you start the WebsiteBaker Setup, please create it with the cydia packages 'phpmyadmin-atv'.
+ Before you start the WebsiteBaker Setup, please create these with 'Adminer' or with the cydia packages 'phpmyadmin-atv'.
  
  After the WebsiteBaker Setup please log in your iDevice with a ssh shell and remove the folder
  /var/www/websitebaker/install
  
- If you remove this package, please be sure that all content in /var/www/websitebaker will be deleted.
+ If you remove this package, please note that all content in /var/www/websitebaker will be deleted.
  Your MySQL database will not be removed. 
  

@@ -13,7 +13,7 @@ WordPress is web software you can use to create a beautiful website or blog.
  (Please use Safari. I don't know why, but e.g. Chrome creates some problems.)
  
  The WordPress Setup needs an existing MySQL user and an existing MySQL database.
- Before you start the WordPress Setup, please create it with the cydia packages 'phpmyadmin-atv'.
+ Before you start the WordPress Setup, please create these with 'Adminer' or with the cydia packages 'phpmyadmin-atv'.
  
- If you remove this package, please be sure that all content in /var/www/wordpress will be deleted.
+ If you remove this package, please note that all content in /var/www/wordpress will be deleted.
  Your MySQL database will not be removed. 
