@@ -16,6 +16,7 @@ A whole AppleTV Web Server Solution Stack Composition
  The localtion of your web files is /var/www
  If you need write permission to a www file or folder, change the owner to 'daemon:_www'
  The MySQL root password is not set during the installation. 
+
  You will find the MySQL database files at /var/mysql
  
  With this cydia package you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards or File Servers.
@@ -41,7 +42,7 @@ A whole AppleTV Web Server Solution Stack Composition
  /usr/local/bin/mysql_secure_installation
  
  If you would like to reinitialize your MySQL database please use this command:
- /usr/local/bin/mysql_install_db --verbose --user=daemon
+ /usr/local/bin/mysql_install_db --user=daemon
  
  You can stop the Lighttpd and MySQL daemons with the commds below:
  launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.plist

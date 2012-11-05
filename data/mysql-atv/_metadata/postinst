@@ -2,7 +2,7 @@
 
 mv /etc/com.atv.mysql.my.cnf /etc/my.cnf
 
-/usr/local/bin/mysql_install_db --verbose --user=daemon 
+/usr/local/bin/mysql_install_db --user=daemon 
 
 echo " "
 echo " "
