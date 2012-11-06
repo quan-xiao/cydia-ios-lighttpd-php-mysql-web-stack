@@ -35,8 +35,8 @@ A whole AppleTV Web Server Solution Stack Composition
  
  Existing config files will be backed up.
  
- If it is possible, please symlink the folder /usr/local to /var/shared/stash/local.
- Through that the packages are not stored on your small first ATV flash partition.
+ If it is possible, please symlink the folder /usr/local to /var/stash/local.
+ Through that the packages data are not stored on your small first ATV flash partition.
  
  To set your MySQL database root password, please run the command below from a ssh console after the installation:
  /usr/local/bin/mysql_secure_installation
