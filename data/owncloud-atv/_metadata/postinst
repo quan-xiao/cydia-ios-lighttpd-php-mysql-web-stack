@@ -5,15 +5,16 @@ chown -R daemon:_www /var/www/owncloud/apps
 chown -R daemon:_www /var/www/owncloud/config
 
 
+if [ -f /etc/lighttpd.conf ]; then
+   echo ' ' >> /etc/lighttpd.conf
+   echo 'include "lighttpd/mod_owncloud.conf"' >> /etc/lighttpd.conf
+
+else
 if [ -f /etc/lighttpd/lighttpd-atv.conf ]; then
    echo ' ' >> /etc/lighttpd/lighttpd-atv.conf
    echo 'include "mod_owncloud.conf"' >> /etc/lighttpd/lighttpd-atv.conf
 fi
- 
-if [ -f /etc/lighttpd.conf ]; then
-   echo ' ' >> /etc/lighttpd.conf
-   echo 'include "lighttpd/mod_owncloud.conf"' >> /etc/lighttpd.conf
-fi
+fi 
 
 echo " "
 echo "Please restart your Lighttpd server!"
