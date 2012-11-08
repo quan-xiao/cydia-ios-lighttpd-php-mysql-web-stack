@@ -3,17 +3,18 @@ WordPress is web software you can use to create a beautiful website or blog.
  We like to say that WordPress is both free and priceless at the same time.
  
  With the cydia packages below you can use WordPress: 
- - 'ios-lighttpd-php-mysql' for iPad/iPhone
- - 'atv-lighttpd-php-mysql' for AppleTV
+ - 'atv-lighttpd-php-mysql' for AppleTV  (AwkwardTV)
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad (AwkwardTV)
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad (BigBoss)
  
  The package files will be stored at /var/www/wordpress
  During the installation the permission of the above folder will be set to owner 'daemon:_www'. 
 
  Please open Safari at your iOS Device and type in 'http://localhost/wordpress'.
- (Please use Safari. I don't know why, but e.g. Chrome creates some problems.)
+ (Please use Safari. I don't know why, but e.g. Chrome create some problems.)
  
  The WordPress Setup needs an existing MySQL user and an existing MySQL database.
- Before you start the WordPress Setup, please create these with 'Adminer' or with the cydia packages 'phpmyadmin-atv'.
+ Before you start the WordPress Setup, please create these with 'Adminer' or with the cydia package 'phpmyadmin-atv'.
  
  If you remove this package, please note that all content in /var/www/wordpress will be deleted.
  Your MySQL database will not be removed. 

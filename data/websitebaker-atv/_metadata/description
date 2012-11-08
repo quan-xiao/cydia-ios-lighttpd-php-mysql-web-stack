@@ -3,14 +3,15 @@ A free, easy and secure, flexible and extensible management system (CMS)
  It helps you to create the website you want. Create new templates within minutes - powered by (X)HTML, CSS and jQuery.
  
  With the cydia packages below you can use WebsiteBaker: 
- - 'ios-lighttpd-php-mysql' for iPad/iPhone
- - 'atv-lighttpd-php-mysql' for AppleTV
+ - 'atv-lighttpd-php-mysql' for AppleTV  (AwkwardTV)
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad (AwkwardTV)
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad (BigBoss)
  
  Please open Safari at your iOS Device and type in 'http://localhost/websitebaker'.
- (Please use Safari. I don't know why, but e.g. Chrome creates some problems.)
+ (Please use Safari. I don't know why, but e.g. Chrome create some problems.)
  
  The WebsiteBaker Setup needs an existing MySQL user and an existing MySQL database.
- Before you start the WebsiteBaker Setup, please create these with 'Adminer' or with the cydia packages 'phpmyadmin-atv'.
+ Before you start the WebsiteBaker Setup, please create these with 'Adminer' or with the cydia package 'phpmyadmin-atv'.
  
  After the WebsiteBaker Setup please log in your iDevice with a ssh shell and remove the folder
  /var/www/websitebaker/install
