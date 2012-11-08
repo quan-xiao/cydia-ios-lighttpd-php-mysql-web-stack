@@ -1,4 +1,4 @@
-A whole AppleTV Web Server Solution Stack Composition
+A whole AppleTV Web Server Solution Stack Composition.
  A whole AppleTV Web Server Solution Stack Composition.
  
  PLEASE DO NOT INSTALL THIS PACKAGES ON YOUR iPHONE, iPOD OR iPAD!
@@ -44,8 +44,11 @@ A whole AppleTV Web Server Solution Stack Composition
  If you would like to reinitialize your MySQL database please use this command:
  /usr/local/bin/mysql_install_db --user=daemon
  
- You can stop the Lighttpd and MySQL daemons with the commds below:
+ You can stop and kill the Lighttpd and MySQL daemons with the commds below:
  launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.plist
  launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.plist
-
- After that you have to kill the mysqld and the lighttpd process.
+ killall lighttpd
+ killall mysqld
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB .
+ 
