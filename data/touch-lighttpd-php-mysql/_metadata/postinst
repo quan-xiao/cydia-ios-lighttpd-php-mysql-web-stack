@@ -2,6 +2,7 @@
 
 #Rename installed config files
 #This will save changed config files during a deinstallation
+mkdir -p /etc/lighttpd
 mv /etc/com.ios.webserver.mod_fastcgi.conf /etc/lighttpd/mod_fastcgi.conf
 mv /etc/com.ios.webserver.lighttpd.conf /etc/lighttpd/lighttpd.conf
 mv /etc/com.ios.webserver.php.ini /etc/php.ini
