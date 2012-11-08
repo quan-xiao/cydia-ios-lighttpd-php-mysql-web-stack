@@ -1,0 +1,69 @@
+#!/bin/sh
+
+#Rename installed config files
+#This will save changed config files during a deinstallation
+mkdir -p /etc/lighttpd
+mv /etc/com.ios.webserver.mod_fastcgi.conf /etc/lighttpd/mod_fastcgi.conf
+mv /etc/com.ios.webserver.lighttpd.conf /etc/lighttpd/lighttpd-atv.conf
+mv /etc/com.ios.webserver.php.ini /etc/php.ini
+mv /etc/com.ios.webserver.load_all.ini /etc/php.d/load_all.ini
+
+#Symlink
+rm /etc/lighttpd.conf
+ln -s /etc/lighttpd/lighttpd-atv.conf /etc/lighttpd.conf
+
+#Create needed folders
+mkdir -p /var/www
+mkdir -p /var/log/lighttpd
+
+#Set permission of the Lighttpd log folder
+chown -R daemon:_www /var/log/lighttpd
+
+
+#Copy content to /var/www/phpinfo.php
+if [ -f /var/www/phpinfo.php ]
+then
+echo""
+else
+   echo "<?PHP phpinfo ();?>" > /var/www/phpinfo.php
+fi
+
+
+#Copy demo content to /var/www/index.html
+if [ -f /var/www/index.html ]
+then
+echo""
+else
+echo '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>' > /var/www/index.html
+echo '<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>iOS Webstack</title>' >> /var/www/index.html
+echo '</head><body><div style="text-align: center;"><h1>Yeah, it works!</h1><h2>' >> /var/www/index.html
+echo 'Now you can safeguard your MySQL installation with a few steps.<br>' >> /var/www/index.html
+echo 'The tool <a target="_blank" href="adminer.php?server=localhost">Adminer</a> will help you. Please click <a' >> /var/www/index.html
+echo ' target="_blank" href="adminer.php?server=localhost&username=root&sql=DELETE%20FROM%20mysql.user%20WHERE%20User=&#39;root&#39;%20AND%20Host%20NOT%20IN%20(&#39;localhost&#39;,%20&#39;127.0.0.1&#39;,%20&#39;::1&#39;);%0ADELETE%20FROM%20mysql.user%20WHERE%20User=&#39;&#39;;%0ADROP%20DATABASE%20test;%0ADELETE%20FROM%20mysql.db%20WHERE%20Db=&#39;test&#39;%20OR%20Db=&#39;test\\_%&#39;;%0AFLUSH%20PRIVILEGES;"' >> /var/www/index.html
+echo ' >here</a> and then on the buttom &#39;execute&#39;.<br>In this way, the MySQL test database and a anonymous MySQL user are deleted.<br>' >> /var/www/index.html
+echo 'Only after that, you have to change the passwords for the MySQL <a target="_blank"' >> /var/www/index.html
+echo 'href="adminer.php?server=localhost&username=root&user=root&host=localhost">root user</a>.' >> /var/www/index.html
+echo '<br>' >> /var/www/index.html
+echo '<br>If you would like test your PHP configuration, please click <a target="_blank" href="phpinfo.php">here</a> and then have fun with:<br>' >> /var/www/index.html
+echo '<br>ownCloud, WordPress, Contao, Textpattern,TYPO3, Drupal, MadeSimple,<br>Symphony, WebsiteBacker, Joomla!, miniBB, MyBB, phpBB, phpMyForum<br>' >> /var/www/index.html
+echo 'or other web presences :-)</h2><h2><br>' >> /var/www/index.html
+echo 'The following web page will give you some more information:<br>' >> /var/www/index.html
+echo '<a target="_blank" href="http://code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack/wiki/Main">' >> /var/www/index.html
+echo 'code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack</a>' >> /var/www/index.html
+echo '</h2><br><br><h2>If you like this iOS WebServer Compilation, please support <a ' >> /var/www/index.html
+echo 'href="http://www.supportunicef.org" target="_blank">UNICEF</a> with a small donation. Thank you.</h2>' >> /var/www/index.html
+echo '<br></div></body></html>' >> /var/www/index.html
+fi
+
+#Respring
+declare -a cydia
+cydia=($CYDIA)
+if [[ ${CYDIA+@} ]]; then
+    eval "echo 'finish:restart' >&${cydia[0]}"
+else
+    echo ""
+    echo "Please kill or restart 'Preferences'."
+fi
+
+exit 0
+

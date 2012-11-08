@@ -1,0 +1,17 @@
+#!/bin/sh
+
+launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.switch.plist 2>&1 | true
+launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.switch.plist 2>&1 | true
+
+MYSQL=`ps -ax | grep '[m]ysql' | grep 'libexec' | awk '{ print $1 }'`
+if [ "$MYSQL" != "" ]; then
+ kill -s TERM $MYSQL
+fi
+
+LIGHTTPD=`ps -ax | grep '[l]ighttpd' | grep 'sbin' | awk '{ print $1 }'`
+if [ "$LIGHTTPD" != "" ]; then
+ kill -s TERM $LIGHTTPD
+fi
+
+exit 0
+

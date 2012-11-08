@@ -1,0 +1,26 @@
+A very small, supposedly fast, webserver.
+ Lighttpd is a very small, supposedly fast, webserver.
+  
+ This software was originally compiled for the AppleTV but it works on all iOS devices.
+ 
+ With the additional packages 'php54' and 'mysql-atv' you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards, File Servers.
+ Such as ownCloud, WebsiteBaker, Contao, TYPO3, WordPress, Joomla!, phpBB, miniBB, etc.
+ 
+ This package does not includes a config file or a Daemon Launcher.
+ Therfore you can install it on all iOS-Devices and you can activate the web server as you would like.   
+ 
+ You can start the web server lighttpd with the command below:
+ /usr/sbin/lighttpd -f'NameOfYourConfigFile'
+ 
+ After the installation you can place your web content here:
+ /var/www
+ 
+ Lighttpd have to be  running as user 'deamon'. Please use the group _www.
+ 
+ If you would like keep it simple then just install one of the cydia packages below:
+ - 'atv-lighttpd-php-mysql' for AppleTV 
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad 
+ They includes this, the above mentioned packages, example config files and daemon launchers for a whole web server solution stack.
+ 
+ 
+

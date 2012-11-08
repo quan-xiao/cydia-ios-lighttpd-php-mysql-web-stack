@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $1 != upgrade ]; then
+ if [ -d /var/www/phpmyadmin ]; then
+  rm -r /var/www/phpmyadmin 
+ fi
+fi
+ 
+exit 0

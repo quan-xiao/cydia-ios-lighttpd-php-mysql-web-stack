@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ $1 != upgrade ]; then
+ if [ -d /var/www/websitebaker ]; then
+  rm -r /var/www/websitebaker
+ fi
+fi
+ 
+exit 0
+

@@ -1,0 +1,54 @@
+A whole AppleTV Web Server Solution Stack Composition. Have a look at http://goo.gl/LXfUB .
+ A whole AppleTV Web Server Solution Stack Composition.
+ 
+ PLEASE DO NOT INSTALL THIS PACKAGES ON YOUR iPHONE, iPOD OR iPAD!
+ YOUR BATTERY WILL BE EMPTY VERY SOON! INSTEAD USE THE CYDIA PACKAGE BELOW:
+ 'ios-lighttpd-php-mysql'
+ 
+ If you are not familiar in operation of console and shell scripting please don't install this package!
+ 
+ This cydia package will install some sub cydia packages like:
+ 
+ PHP54 v5.4.8
+ Lighttpd-atv v1.4.31
+ MySQL-atv v5.1.66
+ 
+ The localtion of your web files is /var/www
+ If you need write permission to a www file or folder, change the owner to 'daemon:_www'
+ The MySQL root user password is not set during the installation. Please change it as soon as possible. 
+
+ You will find the MySQL database files at /var/mysql
+ 
+ With this cydia package you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards or File Servers.
+ Such as ownCloud, WebsiteBaker, Contao, TYPO3, WordPress, Joomla!, phpBB, miniBB, etc.
+ 
+ Additional 'example' config files below are installed:
+ 
+ /etc/php.ini
+ /etc/lighttpd/lighttpd-atv.conf
+ /etc/lighttpd/mod_fastcgi-atv.conf
+ 
+ Furthermore some daemon launcher are installed:
+ 
+ /Library/LaunchDaemons/com.atv.mysql.plist 
+ /Library/LaunchDaemons/com.atv.lighttpd.plist
+ 
+ Existing config files will be backed up.
+ 
+ If it is possible, please symlink the folder /usr/local to /var/stash/local.
+ Through that the packages data are not stored on your small first ATV flash partition.
+ 
+ To set your MySQL database root password, please run the command below from a ssh console after the installation:
+ /usr/local/bin/mysql_secure_installation
+ 
+ If you would like to reinitialize your MySQL database please use this command:
+ /usr/local/bin/mysql_install_db --user=daemon
+ 
+ You can stop and kill the Lighttpd and MySQL daemons with the commds below:
+ launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.plist
+ launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.plist
+ killall lighttpd
+ killall mysqld
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB .
+ 

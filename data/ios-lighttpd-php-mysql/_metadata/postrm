@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -f var/mobile/Library/Preferences/com.atv.lighttpd_mysql.plist ]
+then
+ rm var/mobile/Library/Preferences/com.atv.lighttpd_mysql.plist
+fi
+
+declare -a cydia
+cydia=($CYDIA)
+if [[ ${CYDIA+@} ]]; then
+    eval "echo 'finish:restart' >&${cydia[0]}"
+else
+    echo "Please kill or restart 'Preferences'."
+fi
+
+exit 0
+

@@ -1,0 +1,18 @@
+The overly popular HTML templating language PHP
+ The overly popular HTML templating language PHP.
+
+ This package includes PHP 5.4.x with GD and MySQL support (PDO and mysqli).
+ 
+ This software was originally compiled for the AppleTV but it works on all iOS devices.
+ 
+ With the additional cydia packages 'mysql-atv' and 'lighttpd-atv' you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards, File Servers.
+ Such as ownCloud, WebsiteBaker, Contao, TYPO3, WordPress, Joomla!, phpBB, miniBB, etc. 
+ 
+ You have to place your PHP config file at /etc/php.ini
+  
+ If you would like keep it simple then just install one of the cydia packages below:
+ - 'atv-lighttpd-php-mysql' for AppleTV 
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad 
+ They includes this, the above mentioned packages, example config files and daemon launchers for a whole web server solution stack.
+ 
+ 

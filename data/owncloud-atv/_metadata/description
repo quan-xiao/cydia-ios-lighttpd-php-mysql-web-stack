@@ -1,0 +1,29 @@
+A flexible, open source file sync and share solution
+ ownCloud is a flexible, open source file sync and share solution. Whether using a mobile device, 
+ a workstation, or a web client, ownCloud provides the ability to put the right files at your employees. 
+ Fingertips on any device in one simple-to-use, secure, private and controlled solution.
+
+ With the cydia packages below you can use ownCloud: 
+ - 'atv-lighttpd-php-mysql' for AppleTV  (AwkwardTV)
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad (AwkwardTV)
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad (BigBoss)
+ 
+ The package files will be stored at /var/www/owncloud
+ During the installation the permission of some folders are set to the owner 'daemon:_www'. 
+
+ Please open Safari at your iOS Device and type in 'http://localhost/owncloud'.
+ (Please use Safari. I don't know why, but e.g. Chrome create some problems.)
+ 
+ During the installation you can choose MySQL or SQLite3.
+ 
+ Using of SQLite3:
+ - Quick, save and easy. Need not mutch memory.
+ 
+ Using of MySQL:
+ - You will get some errors one or two times. But that is not a problem. Reload the page and everything is fine.
+ - You will needs an existing MySQL user and an existing MySQL database.
+ - Before you start the ownCloud Setup, please create these with 'Adminer' or with the cydia package 'phpmyadmin-atv'.
+ 
+ If you remove this package, please note that all content in /var/www/ownCloud will be deleted.
+ If you use SQLite3, a database in /var/www/ownlcoud/ will be removed!
+ If you use MySQL, the database will not be removed. 
