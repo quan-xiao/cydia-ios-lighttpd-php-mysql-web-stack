@@ -1,0 +1,47 @@
+A whole iPad/iPhone Web Server Compilation
+ A whole iPad/iPhone Web Server Compilation (Lighttpd, PHP(GD) and MySQL).
+ 
+ THIS PACKAGES IS NOT FOR AppleTV DEVICES.
+ IF YOU ARE ON AN AppleTV DEVICE PLEASE INSTALL THE CYDIA PACKAGE BELOW:
+ 'ATV-WebStack' FROM apt.AwkwardTV.org. 
+ YOU WILL GET MORE INFORMATION HERE: http://goo.gl/LXfUB
+  
+ If you are not familiar in operation of console and shell scripting please don't install this package!
+ 
+ This cydia package will install some sub cydia packages like:
+ 
+ PHP53 5.3.18 by me (J.Anrugas)
+ Lighttpd-atv 1.4.18 by Saurik
+ MySQL-atv 5.0.96 by Wizardry and Steamworks
+ Daemon Launchers by Wizardry and Steamworks
+ 
+ To save battery power and for safety reasons you can switch the servers on/off in your 'Device Settings'.
+ To finish the installation you have to (re)start the servers and then run Safari on your iOS device and load the web site http://loaclhost .
+ (I don't know why, but e.g. Chrome creates some problems with phpMyAdmin.)
+ 
+ The localtion of your web files is /var/www.
+ If you need write permission to a www file or folder, change the owner to 'daemon:_www'
+ The MySQL root user password is not set during the installation. Please change it as soon as possible.
+
+ You will find the MySQL database at /var/lib/mysql
+ 
+ With this cydia packages above you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards or File Servers.
+ Such as ownCloud, WebsiteBaker, Contao, TYPO3, WordPress, Joomla!, phpBB, miniBB, etc.
+ 
+ Additional 'example' config files below are installed:
+ 
+ /etc/php.ini
+ /etc/php.d/load_all.ini
+ /etc/lighttpd/lighttpd-atv.conf
+ /etc/lighttpd/mod_fastcgi-atv.conf 
+ 
+ Existing config files will be backed up.
+ Furthermore preference loader for daemon launchers are installed.
+ 
+ Please change your MySQL root user password. Just open with Safari the local page http://loaclhost and you will get all necessary information. 
+ 
+ You will get more MySQL information here: http://was.fm/ios:mysql
+ 
+ If you would like to get an iOS-WebStack with less memory usage, safe graphic libraries and more documentation, please have a look at http://goo.gl/LXfUB .
+
+
