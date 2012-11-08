@@ -6,9 +6,13 @@ if [ $1 != upgrade ]; then
  fi
 fi
 
- if [ -f /etc/lighttpd/lighttpd-atv.conf ];then
+if [ -f /etc/lighttpd/lighttpd-atv.conf ];then
   sed -i '/mod_owncloud/d' /etc/lighttpd/lighttpd-atv.conf
- fi
+fi
+
+if [ -f /etc/lighttpd.conf ];then
+  sed -i '/mod_owncloud/d' /etc/lighttpd.conf
+fi
  
 exit 0
 
