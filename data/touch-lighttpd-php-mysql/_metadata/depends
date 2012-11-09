@@ -1,1 +1,1 @@
-php53, com.was.mysql, lighttpd, net.was.lighttpd
+php53, com.was.mysql (>= 5.0.96), lighttpd, net.was.lighttpd
