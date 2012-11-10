@@ -1,12 +1,13 @@
-A flexible, open source file sync and share solution
+A flexible, open source file sync and share solution. Have a look at http://goo.gl/LXfUB .
  ownCloud is a flexible, open source file sync and share solution. Whether using a mobile device, 
  a workstation, or a web client, ownCloud provides the ability to put the right files at your employees. 
  Fingertips on any device in one simple-to-use, secure, private and controlled solution.
 
  With the cydia packages below you can use ownCloud: 
- - 'atv-lighttpd-php-mysql' for AppleTV  (AwkwardTV)
- - 'ios-lighttpd-php-mysql' for iPhone/iPad (AwkwardTV)
- - 'touch-lighttpd-php-mysql' for iPhone/iPad (BigBoss)
+ - 'atv-lighttpd-php-mysql' for AppleTV
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad
+   (For safety reasons, you should not use the touch- package)
  
  The package files will be stored at /var/www/owncloud
  During the installation the permission of some folders are set to the owner 'daemon:_www'. 
@@ -27,3 +28,6 @@ A flexible, open source file sync and share solution
  If you remove this package, please note that all content in /var/www/ownCloud will be deleted.
  If you use SQLite3, a database in /var/www/ownlcoud/ will be removed!
  If you use MySQL, the database will not be removed. 
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB . 
+ 

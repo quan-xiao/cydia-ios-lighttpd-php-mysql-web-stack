@@ -1,12 +1,13 @@
-A whole iPad/iPhone Web Server Solution Stack Composition. THIS LAUNCHER PACKAGES IS NOT FOR AppleTV DEVICES. IF YOU ARE ON AN AppleTV DEVICE PLEASE INSTALL THE CYDIA PACKAGE BELOW: 'atv-lighttpd-php-mysql'. HAVE A LOOK AT http://goo.gl/LXfUB .
+A whole iPad/iPhone Web Server Solution Stack Composition. THIS LAUNCHER PACKAGES IS NOT FOR AppleTV DEVICES. IF YOU ARE ON AN AppleTV DEVICE PLEASE INSTALL THE PACKAGE BELOW atv-lighttpd-php-mysql. HAVE A LOOK AT http://goo.gl/LXfUB .
  A whole iPad/iPhone Web Server Solution Stack Composition.
  
  This software composition was originally compiled for the AppleTV but it works on all iOS devices.
  
  THIS LAUNCHER PACKAGES IS NOT FOR AppleTV DEVICES.
- IF YOU ARE ON AN AppleTV DEVICE PLEASE INSTALL THE CYDIA PACKAGE BELOW:
+ IF YOU ARE ON AN AppleTV DEVICE PLEASE INSTALL THE PACKAGE BELOW:
  'atv-lighttpd-php-mysql'
-  
+ You will get more information here: http://goo.gl/LXfUB
+   
  If you are not familiar in operation of console and shell scripting please don't install this package!
  
  This cydia package will install some sub cydia packages like:

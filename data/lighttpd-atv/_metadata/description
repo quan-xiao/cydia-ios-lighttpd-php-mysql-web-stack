@@ -1,4 +1,4 @@
-A very small, supposedly fast, webserver.
+A very small, supposedly fast, webserver. Have a look at http://goo.gl/LXfUB .
  Lighttpd is a very small, supposedly fast, webserver.
   
  This software was originally compiled for the AppleTV but it works on all iOS devices.
@@ -21,6 +21,8 @@ A very small, supposedly fast, webserver.
  - 'atv-lighttpd-php-mysql' for AppleTV 
  - 'ios-lighttpd-php-mysql' for iPhone/iPad 
  They includes this, the above mentioned packages, example config files and daemon launchers for a whole web server solution stack.
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB . 
  
  
 

@@ -4,7 +4,8 @@ A whole AppleTV Web Server Solution Stack Composition. Have a look at http://goo
  PLEASE DO NOT INSTALL THIS PACKAGES ON YOUR iPHONE, iPOD OR iPAD!
  YOUR BATTERY WILL BE EMPTY VERY SOON! INSTEAD USE THE CYDIA PACKAGE BELOW:
  'ios-lighttpd-php-mysql'
- 
+ You will get more information here: http://goo.gl/LXfUB
+  
  If you are not familiar in operation of console and shell scripting please don't install this package!
  
  This cydia package will install some sub cydia packages like:
