@@ -1,11 +1,12 @@
-A tool to handle the administration of MySQL over the World Wide Web
+A tool to handle the administration of MySQL over the World Wide Web. Have a look at http://goo.gl/LXfUB .
  phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the World Wide Web. 
  phpMyAdmin supports a wide range of operations with MySQL.
  
  With the cydia packages below you can use phpMyAdmin: 
- - 'atv-lighttpd-php-mysql' for AppleTV  (AwkwardTV)
- - 'ios-lighttpd-php-mysql' for iPhone/iPad (AwkwardTV)
- - 'touch-lighttpd-php-mysql' for iPhone/iPad (BigBoss)
+ - 'atv-lighttpd-php-mysql' for AppleTV
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad
+   (For safety reasons, you should not use the touch- package)
  
  The package files will be stored at /var/www/phpmyadmin
  
@@ -13,5 +14,7 @@ A tool to handle the administration of MySQL over the World Wide Web
  (Please use Safari. I don't know why, but e.g. Chrome create some problems.)
  
  Be careful with phpMyAdmin. Some hackers use it to get access to your system!
-
  If you do not use phpMyAdmin any more, please remove it as soon as possible.
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB . 
+ 
