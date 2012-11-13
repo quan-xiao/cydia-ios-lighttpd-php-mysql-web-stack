@@ -1,0 +1,4 @@
+Tagged Image File Format (TIFF) library.
+ Tagged Image File Format (TIFF) library.
+ A library for handling TIFF files.
+ This package contains the libtiff headers.
