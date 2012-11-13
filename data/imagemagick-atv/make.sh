@@ -6,8 +6,15 @@ echo PKG_TARG = "${PKG_TARG}"
 
 pkg:setup
 
-export CPPFLAGS="-I$(PKG_DEST_ freetype2-atv)/usr/include/freetype2"
+export CPPFLAGS="-I$(PKG_DEST_ freetype2-atv)/usr/include/freetype2 -I$(PKG_DEST_ libxml2)/usr/include/libxml2"
 
-pkg:configure --disable-largefile --with-perl=no  --with-x=no LIBS=-lfreetype --with-freetype=yes
+export PATH=$PATH:"$(PKG_DEST_ libxml2)"/usr/bin
+
+pkg:configure ac_cv_path_xml2_config="$(PKG_DEST_ libxml2)"/usr/bin/xml2-config --disable-largefile --with-quantum-depth=8
+
 pkg:make
+
 pkg:install
+
+
+

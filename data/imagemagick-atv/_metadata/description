@@ -1,5 +1,44 @@
 ImageMagick ia software suite to create, edit, compose, or convert bitmap images.
  ImageMagick is a software suite to create, edit, compose, or convert bitmap images.
- It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and TIFF.
+ It can read and write images in a variety of formats.
  Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bezier curves.
  
+ Option		Value
+ -----------------------------------
+ Quantum depth	8
+ High Dynamic Range Imagery	no 
+ BZLIB		yes
+ Autotrace	no
+ Dejavu fonts	none
+ DJVU		no
+ DPS		no
+ FFTW		no
+ FlashPIX	no
+ FontConfig	no
+ FreeType	yes
+ GhostPCL	no
+ Ghostsct	no
+ Ghostscript	no
+ Graphviz	no
+ JBIG		no
+ JPEG v1	yes
+ JPEG-2000	no
+ LCMS v1	no
+ LCMS v2	no
+ LQR		no
+ LTDL		no
+ LZMA		no
+ Magick++	yes
+ OpenEXR	no
+ PERL		no
+ PANGO		no
+ PNG		yes
+ RSVG		no
+ TIFF		yes
+ WEBP		no
+ Windows fonts	none
+ WMF		no
+ X11		no
+ ZLIB		yes
+ XML		yes
+
