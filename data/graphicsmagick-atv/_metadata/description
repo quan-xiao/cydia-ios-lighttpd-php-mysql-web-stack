@@ -1,0 +1,29 @@
+GraphicsMagick is the swiss army knife of image processing. 
+ GraphicsMagick is the swiss army knife of image processing. 
+ In the base package it provides a robust and efficient collection of tools and libraries which support reading, writing, and manipulating an image in over 88 major formats including important formats.
+ 
+ Option		Configured value
+ -------------------------------
+ Quantum depth	8
+ 
+ BZLIB		yes
+ DPS		no
+ FlashPIX	no
+ FreeType 2.0	yes
+ Ghostscript	no
+ JBIG		no
+ JPEG v1	yes
+ JPEG-2000	no
+ LCMS v1	no
+ LCMS v2	no
+ LZMA		no
+ Magick++	yes
+ PERL		no
+ PNG		yes (-lpng12)
+ TIFF		yes
+ TRIO		no
+ WMF		no
+ X11		no
+ XML		yes
+ ZLIB		yes
+ 
