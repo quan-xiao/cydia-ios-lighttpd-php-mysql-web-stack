@@ -11,6 +11,9 @@ mv /etc/com.atv.web-stack.load_all.ini /etc/php.d/load_all.ini
 mkdir -p /var/www
 mkdir -p /var/log/lighttpd
 
+#Set permission to the main folder
+chown -R daemon:_www /var/www
+
 #Set permission of the Lighttpd log folder
 chown -R daemon:_www /var/log/lighttpd
 
