@@ -1,5 +1,3 @@
-ImageMagick ia software suite to create, edit, compose, or convert bitmap images.
- ImageMagick is a software suite to create, edit, compose, or convert bitmap images.
- It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and TIFF.
- Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bezier curves.
- 
+FreeType 2 a software font engine
+ FreeType 2 is a software font engine that is designed to be small, efficient, highly customizable, and portable while capable of producing high-quality output (glyph images).
+ It can be used in graphics libraries, display servers, font conversion tools, text image generation tools, and many other products as well.
