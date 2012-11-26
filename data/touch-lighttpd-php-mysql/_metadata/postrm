@@ -4,8 +4,8 @@ if [ $1 != upgrade ]; then
  rm /etc/php.ini
  rm /etc/php.d/load_all.ini
  rm -r /etc/lighttpd
- rm lighttpd.conf
- rm -r /log/lighttpd
+ rm /etc/lighttpd.conf
+ rm -r /var/log/lighttpd
  rm /var/www/phpinfo.php
  rm /var/www/index.html
 

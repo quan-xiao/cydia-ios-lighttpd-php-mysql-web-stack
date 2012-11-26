@@ -11,7 +11,7 @@ then
  rm /etc/com.atv.web-stack.php.ini
  rm /etc/com.atv.web-stack.load_all.ini
 else
-
+ mkdir -p /etc/lighttpd
  mv /etc/com.atv.web-stack.mod_fastcgi-atv.conf /etc/lighttpd/mod_fastcgi-atv.conf
  mv /etc/com.atv.web-stack.lighttpd-atv.conf /etc/lighttpd/lighttpd-atv.conf
  mv /etc/com.atv.web-stack.php.ini /etc/php.ini

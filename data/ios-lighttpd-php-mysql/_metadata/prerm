@@ -16,13 +16,13 @@ if [ $1 != upgrade ]; then
 fi
 
  rm /Library/LaunchDaemons/com.atv.lighttpd.switch.plist
- rm /Library/LaunchDaemons/com.atv.mysql.switch.plis
+ rm /Library/LaunchDaemons/com.atv.mysql.switch.plist
  rm /var/mobile/Library/Preferences/com.atv.lighttpd_mysql.plist
 
  rm /etc/php.ini
  rm /etc/php.d/load_all.ini
  rm -r /etc/lighttpd
- rm -r /log/lighttpd
+ rm -r /var/log/lighttpd
  rm /var/www/phpinfo.php
  rm /var/www/index.html
 
