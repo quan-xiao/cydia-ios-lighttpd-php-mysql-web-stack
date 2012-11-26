@@ -1,21 +1,33 @@
 #!/bin/sh
 
-launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.plist 2>&1 | true
-launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.plist 2>&1 | true
+if [ $1 != upgrade ]; then
+ launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.plist 2>&1 | true
+ launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.plist 2>&1 | true
 
 
-#Dobble Check
+ #Dobble Check
 
-LIGHTTPD=`ps -ax | grep '[l]ighttpd' | grep 'sbin' | awk '{ print $1 }'`
-if [ "$LIGHTTPD" != "" ]; then
- kill -s TERM $LIGHTTPD
+ LIGHTTPD=`ps -ax | grep '[l]ighttpd' | grep 'sbin' | awk '{ print $1 }'`
+ if [ "$LIGHTTPD" != "" ]; then
+  kill -s TERM $LIGHTTPD
+ fi
+
+ MYSQL=`ps -ax | grep '[m]ysql' | grep 'libexec' | awk '{ print $1 }'`
+ if [ "$MYSQL" != "" ]; then
+  kill -s TERM $MYSQL
+ fi
+
+ rm /Library/LaunchDaemons/com.atv.lighttpd.plist
+ rm /Library/LaunchDaemons/com.atv.mysql.plist
+
+ rm /etc/php.ini
+ rm /etc/php.d/load_all.ini
+ rm -r /etc/lighttpd
+ rm -r /log/lighttpd
+ rm /var/www/phpinfo.php
+ rm /var/www/index.html
+ 
 fi
-
-MYSQL=`ps -ax | grep '[m]ysql' | grep 'libexec' | awk '{ print $1 }'`
-if [ "$MYSQL" != "" ]; then
- kill -s TERM $MYSQL
-fi
-
 
 exit 0
 

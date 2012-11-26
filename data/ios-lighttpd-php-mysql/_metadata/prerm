@@ -1,17 +1,31 @@
 #!/bin/sh
 
-launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.switch.plist 2>&1 | true
-launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.switch.plist 2>&1 | true
-
-MYSQL=`ps -ax | grep '[m]ysql' | grep 'libexec' | awk '{ print $1 }'`
-if [ "$MYSQL" != "" ]; then
- kill -s TERM $MYSQL
+if [ $1 != upgrade ]; then
+ launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.switch.plist 2>&1 | true
+ launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.switch.plist 2>&1 | true
+ 
+ MYSQL=`ps -ax | grep '[m]ysql' | grep 'libexec' | awk '{ print $1 }'`
+ if [ "$MYSQL" != "" ]; then
+  kill -s TERM $MYSQL
+ fi
+ 
+ LIGHTTPD=`ps -ax | grep '[l]ighttpd' | grep 'sbin' | awk '{ print $1 }'`
+ if [ "$LIGHTTPD" != "" ]; then
+  kill -s TERM $LIGHTTPD
+ fi
 fi
 
-LIGHTTPD=`ps -ax | grep '[l]ighttpd' | grep 'sbin' | awk '{ print $1 }'`
-if [ "$LIGHTTPD" != "" ]; then
- kill -s TERM $LIGHTTPD
-fi
+ rm /Library/LaunchDaemons/com.atv.lighttpd.switch.plist
+ rm /Library/LaunchDaemons/com.atv.mysql.switch.plis
+ rm /var/mobile/Library/Preferences/com.atv.lighttpd_mysql.plist
+
+ rm /etc/php.ini
+ rm /etc/php.d/load_all.ini
+ rm -r /etc/lighttpd
+ rm -r /log/lighttpd
+ rm /var/www/phpinfo.php
+ rm /var/www/index.html
+
 
 exit 0
 

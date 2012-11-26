@@ -1,11 +1,22 @@
 #!/bin/sh
 
-declare -a cydia
-cydia=($CYDIA)
-if [[ ${CYDIA+@} ]]; then
+if [ $1 != upgrade ]; then
+ rm /etc/php.ini
+ rm /etc/php.d/load_all.ini
+ rm -r /etc/lighttpd
+ rm lighttpd.conf
+ rm -r /log/lighttpd
+ rm /var/www/phpinfo.php
+ rm /var/www/index.html
+
+ declare -a cydia
+ cydia=($CYDIA)
+ if [[ ${CYDIA+@} ]]; then
     eval "echo 'finish:restart' >&${cydia[0]}"
-else
+ else
     echo "Please kill or restart 'Preferences'."
+ fi
+
 fi
 
 exit 0

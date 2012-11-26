@@ -10,7 +10,7 @@ A whole AppleTV Web Server Solution Stack Composition. Have a look at http://goo
  
  This cydia package will install some sub cydia packages like:
  
- PHP54 v5.4.8
+ PHP54 v5.4.9
  Lighttpd-atv v1.4.31
  MySQL-atv v5.1.66
  
