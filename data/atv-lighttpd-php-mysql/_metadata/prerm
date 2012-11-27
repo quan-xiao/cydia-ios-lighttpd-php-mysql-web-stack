@@ -21,12 +21,12 @@ if [ $1 != upgrade ]; then
  rm /Library/LaunchDaemons/com.atv.mysql.plist
 
  rm /etc/php.ini
- rm /etc/php.d/load_all.ini
+ rm -r /etc/php.d
  rm -r /etc/lighttpd
  rm -r /var/log/lighttpd
  rm /var/www/phpinfo.php
  rm /var/www/index.html
- 
+ rm /var/www/adminer.php 
 fi
 
 exit 0

@@ -2,12 +2,13 @@
 
 if [ $1 != upgrade ]; then
  rm /etc/php.ini
- rm /etc/php.d/load_all.ini
+ rm -r /etc/php.d
  rm -r /etc/lighttpd
  rm /etc/lighttpd.conf
  rm -r /var/log/lighttpd
  rm /var/www/phpinfo.php
  rm /var/www/index.html
+ rm /var/www/adminer.php
 
  declare -a cydia
  cydia=($CYDIA)
