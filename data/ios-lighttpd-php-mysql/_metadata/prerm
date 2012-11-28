@@ -25,7 +25,6 @@ fi
  rm -r /var/log/lighttpd
  rm /var/www/phpinfo.php
  rm /var/www/index.html
- rm /var/www/adminer.php
 
 exit 0
 

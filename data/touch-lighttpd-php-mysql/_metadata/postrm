@@ -8,7 +8,6 @@ if [ $1 != upgrade ]; then
  rm -r /var/log/lighttpd
  rm /var/www/phpinfo.php
  rm /var/www/index.html
- rm /var/www/adminer.php
 
  declare -a cydia
  cydia=($CYDIA)
