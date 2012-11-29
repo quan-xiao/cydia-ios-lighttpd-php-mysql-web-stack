@@ -1,0 +1,23 @@
+#!/bin/sh
+
+chown -R daemon:_www /var/www/typo3_introduction
+
+if [ -f /etc/lighttpd.conf ]; then
+   echo ' ' >> /etc/lighttpd.conf
+   echo 'include "lighttpd/mod_typo3_intro_package.conf"' >> /etc/lighttpd.conf
+
+else
+if [ -f /etc/lighttpd/lighttpd-atv.conf ]; then
+   echo ' ' >> /etc/lighttpd/lighttpd-atv.conf
+   echo 'include "mod_typo3_intro_package.conf"' >> /etc/lighttpd/lighttpd-atv.conf
+fi
+fi
+
+echo " "
+echo "Please restart your Lighttpd server!"
+echo "After that you can open your TYPO3 installation with following link:"
+echo "http://your_server:8080"
+echo " "
+
+
+exit 0

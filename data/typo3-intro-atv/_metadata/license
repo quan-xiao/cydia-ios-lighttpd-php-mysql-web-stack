@@ -1,0 +1,33 @@
+Licenses
+
+The TYPO3 project, represented by the TYPO3 Association, uses different licenses
+
+for the distribution of software and documentation
+for contributions from individuals and corporations
+We chose to distribute licenses as they support the vision and mission of the TYPO3 project:
+"Inspiring People to Share" and "Jointly Innovate Excellent Free Software Enabling People to Communicate"
+
+Our Contributor License Agreements are based on the Apache CLA and adapted to our needs. In our search for licenses we have found their model to be 
+the fairest and most effective for both the contributors and the Association.
+
+Generally, contributors retain full rights to use their original work, whilst giving the TYPO3 Association and its projects the right to distribute 
+and build upon their work within the TYPO3 project.
+
+Distribution Licenses
+Software distributions are licensed as follows:
+
+TYPO3 CMS 3.x - 4.x is licensed under the GNU General Public License version 2 or later
+TYPO3 Neos CMS (under construction) is licensed under the GNU General Public License version 3 or later
+TYPO3 Flow is licensed under the GNU Lesser General Public License version 3 or later
+Contribution Licenses
+Contributor License Agreements (CLA)
+Starting with TYPO3 version 5, the TYPO3 Association requests all contributors of ideas, code, or documentation to the TYPO3 projects (including 
+TYPO3 Flow) to complete, sign, and submit an individual Contributor License Agreement (CLA). The same is recommended but not mandatory for 
+contributions to TYPO3 CMS.
+
+The purpose of this agreement is to clearly define the terms under which intellectual property has been contributed to TYPO3. We need to have a 
+signed CLA on file before we can grant you commit rights to any of the TYPO3 Neos projects.
+
+A Corporate CLA (CCLA) is available for companies that contribute intellectual property that may have been assigned as part of an employment 
+agreement. Please note: a Corporate CLA does not remove the need for every developer to sign their individual CLA to cover any of their 
+contributions which are not owned by the corporation signing the CCLA.
