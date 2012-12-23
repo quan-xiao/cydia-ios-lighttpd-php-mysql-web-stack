@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $1 != upgrade ]; then
+if [ $1 == remove ]; then
  if [ -d /var/www/owncloud ]; then
    rm -r /var/www/owncloud   
  fi
