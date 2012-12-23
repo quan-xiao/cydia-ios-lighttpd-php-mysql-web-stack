@@ -1,0 +1,22 @@
+Web installer for the newest Contao version. After the installation please open Safari and load the side 'http://your_ios_device/contao/check'.
+ Web installer for the newest Contao version.
+ Contao is an open source content management system (CMS) for people who want a professional internet presence that is easy to maintain.
+ 
+ With the cydia packages below you can use Contao: 
+ - 'atv-lighttpd-php-mysql' for AppleTV
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad
+   (For safety reasons, you should not use the touch- package)
+ 
+ Please open Safari at your iOS Device and type in 'http://localhost/contao/check'.
+ 
+ (Please use Safari. I don't know why, but e.g. Chrome create some problems.)
+ The webinstaller will create files at /var/www/contao with permissions for the user 'daemon:_www'.
+ 
+ After the installation you will find your Contao at 'http://your_ios_device/contao'
+ 
+ If you remove this package, please note that all content in /var/www/contao will be deleted.
+ If you use MySQL, the database will not be removed. 
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB . 
+ 

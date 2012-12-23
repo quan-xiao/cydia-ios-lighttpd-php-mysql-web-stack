@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#Prepar the contao install script permissions
+chown daemon:_www /var/www/contao -R 
+
+echo " "
+echo " "
+echo "Please open Safari at your iOS Device and type in 'http://localhost/contao/check'."
+echo "After the installation you will find Contao at 'http://your_ios_device/contao'."
+echo " "
+
+exit 0

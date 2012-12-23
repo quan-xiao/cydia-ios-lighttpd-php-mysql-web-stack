@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ $1 == remove ]; then
+ if [ -d /var/www/contao ]; then
+   rm -r /var/www/contao   
+ fi
+fi
+
+ 
+exit 0
+
