@@ -2,17 +2,10 @@
 
 mv /etc/com.atv.mysql.my.cnf /etc/my.cnf
 
-#During a package upate, the Daemon Launcher will stop and don't restart 'mysqld' -> Damn!
-#Therefore we have to restart it....
-if [ -f /Library/LaunchDaemons/com.atv.mysql.plist ]
-then
-launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist    
-fi
-
  echo " "
  echo " "
 
-if [ $1 != upgrade ]
+if [ $1 == install ]
 then
  /usr/local/bin/mysql_install_db --user=daemon
 
@@ -22,6 +15,13 @@ then
  echo "After that you have to set your MySQL root password:"
  echo "/usr/local/bin/mysql_secure_installation" 
 else
+ #During a package upgrade, the old packages scripts will stop and don't restart 'mysqld' -> Damn!
+ #Therefore we have to restart it again ....
+ if [ -f /Library/LaunchDaemons/com.atv.mysql.plist ]
+ then
+  launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
+ fi
+
  echo "Upgrade done!" 
 fi
 
