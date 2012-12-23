@@ -1,0 +1,13 @@
+diff -r 391f12efb39f -r dde5518d580c include/my_global.h
+--- a/include/my_global.h	Sat Sep 15 03:53:52 2012 +0200
++++ b/include/my_global.h	Sat Sep 15 04:01:31 2012 +0200
+@@ -168,7 +168,7 @@
+ #  define SIZEOF_INT 4
+ #  define SIZEOF_LONG_LONG 8
+ #  define SIZEOF_OFF_T 8
+-#  if defined(__i386__) || defined(__ppc__)
++#  if defined(__i386__) || defined(__ppc__) || defined(__arm__)
+ #    define SIZEOF_CHARP 4
+ #    define SIZEOF_LONG 4
+ #  elif defined(__x86_64__) || defined(__ppc64__)
+ 

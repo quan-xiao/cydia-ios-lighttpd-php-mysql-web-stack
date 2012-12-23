@@ -1,0 +1,67 @@
+# This is an 'EXAMPLE" option/configuration file for MySQL
+# It is for a system with little memory (32M - 64M) where MySQL plays
+# an important part, or systems up to 128M where MySQL is used together with
+# other programs (such as a web server)
+#
+# You will get more information here:
+# http://dev.mysql.com/doc/refman/5.5/en/server-configuration-defaults.html
+#
+# In this file, you can use all long options that a program supports.
+# If you want to know which options a program supports, run the program
+# with the "--help" option.
+
+# The following options will be passed to all MySQL clients
+[client]
+#password		= your_password
+port			= 3306
+# Be careful with 'socket'. 
+# Tools of MySQL-atv and PHP54/PHP53 needed the fix value '/tmp/mysql.sock'. 
+# The best doing is do nothing with it.
+socket			= /tmp/mysql.sock
+
+
+# The MySQL server
+[mysqld]
+basedir		= /usr/local
+datadir			= /var/mysql
+user			= daemon
+pid-file		= /var/run/mysql.pid
+port			= 3306
+socket 			= /tmp/mysql.sock
+#bind-address=addr	= 127.0.0.1
+log-error		= /var/log/mysql.err
+table_open_cache 	= 4
+sort_buffer_size 	= 64K
+read_buffer_size 	= 256K
+read_rnd_buffer_size 	= 256K
+net_buffer_length 	= 2K
+thread_stack 		= 128K
+query_cache_size 	= 0M
+
+# required unique id between 1 and 2^32 - 1
+# defaults to 1 if master-host is not set
+# but will not function as a master if omitted
+server-id		= 1
+
+# Use this option if you have a MySQL server with InnoDB support enabled
+# but you do not plan to use it. This will save memory and disk space
+# and speed up some things.
+# More information here: /usr/local/share/mysql/my-innodb-heavy-4G.cnf
+skip-innodb
+
+
+[mysqldump]
+quick
+max_allowed_packet 	= 16M
+
+[mysql]
+no-auto-rehash
+
+[myisamchk]
+key_buffer_size 	= 8M
+sort_buffer_size 	= 8M
+read_buffer 		= 2M
+write_buffer 		= 2M
+
+[mysqlhotcopy]
+interactive-timeout

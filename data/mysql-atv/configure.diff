@@ -1,0 +1,98 @@
+diff -r 391f12efb39f -r dde5518d580c configure
+--- mysql-5.1.66/configure	2012-09-26 03:09:58.000000000 +0200 
++++ mysql-5.1.66/configure	2012-09-26 03:09:58.000000000 +0200 
+@@ -747,13 +747,13 @@
+ # Initializations.
+ #
+ ac_default_prefix=/usr/local
+ ac_clean_files=
+ ac_config_libobj_dir=.
+ LIBOBJS=
+-cross_compiling=no
++cross_compiling=yes
+ subdirs=
+ MFLAGS=
+ MAKEFLAGS=
+ SHELL=${CONFIG_SHELL-/bin/sh}
+ 
+ # Identity of this package.
+@@ -24739,14 +24739,14 @@
+ 
+ 
+ #
+ # Some system specific hacks
+ #
+ 
+-MAX_C_OPTIMIZE="-O3"
+-MAX_CXX_OPTIMIZE="-O3"
++MAX_C_OPTIMIZE="-O2"
++MAX_CXX_OPTIMIZE="-O2"
+ 
+ case $SYSTEM_TYPE in
+   *solaris2.7*)
+     # Solaris 2.7 has a broken /usr/include/widec.h
+     # Make a fixed copy in ./include
+     { $as_echo "$as_me:$LINENO: WARNING: Fixing broken include files for $SYSTEM_TYPE" >&5
+@@ -26419,14 +26419,14 @@
+ case $SYSTEM_TYPE in
+   *netware*)
+     DEBUG_CFLAGS="-g -DDEBUG -sym internal,codeview4"
+     DEBUG_CXXFLAGS="-g -DDEBUG -sym internal,codeview4"
+     DEBUG_OPTIMIZE_CC="-DDEBUG"
+     DEBUG_OPTIMIZE_CXX="-DDEBUG"
+-    OPTIMIZE_CFLAGS="-O3 -DNDEBUG"
+-    OPTIMIZE_CXXFLAGS="-O3 -DNDEBUG"
++    OPTIMIZE_CFLAGS="-O2 -DNDEBUG"
++    OPTIMIZE_CXXFLAGS="-O2 -DNDEBUG"
+     ;;
+ esac
+ 
+ # If the user specified CFLAGS, we won't add any optimizations
+ if test -n "$SAVE_CFLAGS"
+ then
+@@ -48094,13 +48094,13 @@
+   { { $as_echo "$as_me:$LINENO: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ { { $as_echo "$as_me:$LINENO: error: cannot run test program while cross compiling
+ See \`config.log' for more details." >&5
+ $as_echo "$as_me: error: cannot run test program while cross compiling
+ See \`config.log' for more details." >&2;}
+-   { (exit 1); exit 1; }; }; }
++   }; }
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+@@ -48200,13 +48200,13 @@
+   { { $as_echo "$as_me:$LINENO: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ { { $as_echo "$as_me:$LINENO: error: cannot run test program while cross compiling
+ See \`config.log' for more details." >&5
+ $as_echo "$as_me: error: cannot run test program while cross compiling
+ See \`config.log' for more details." >&2;}
+-   { (exit 1); exit 1; }; }; }
++  }; }
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+@@ -48413,13 +48413,13 @@
+   { { $as_echo "$as_me:$LINENO: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ { { $as_echo "$as_me:$LINENO: error: cannot run test program while cross compiling
+ See \`config.log' for more details." >&5
+ $as_echo "$as_me: error: cannot run test program while cross compiling
+ See \`config.log' for more details." >&2;}
+-   { (exit 1); exit 1; }; }; }
++   }; }
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+

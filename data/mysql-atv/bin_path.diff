@@ -1,0 +1,51 @@
+diff -r 7cfedcbb7a68 -r 7eb7c761b8db extra/Makefile.in
+--- a/extra/Makefile.in	Wed Sep 26 03:43:49 2012 +0200
++++ b/extra/Makefile.in	Wed Sep 26 20:41:15 2012 +0200
+@@ -937,7 +937,7 @@
+ $(top_builddir)/include/mysqld_error.h: comp_err.c \
+ 			$(top_srcdir)/sql/share/errmsg.txt
+ 	$(MAKE) $(AM_MAKEFLAGS) comp_err$(EXEEXT)
+-	$(top_builddir)/extra/comp_err$(EXEEXT) \
++	comp_err$(EXEEXT) \
+ 	--charset=$(top_srcdir)/sql/share/charsets \
+ 	--out-dir=$(top_builddir)/sql/share/ \
+ 	--header_file=$(top_builddir)/include/mysqld_error.h \
+diff -r 7cfedcbb7a68 -r 7eb7c761b8db scripts/Makefile.in
+--- a/scripts/Makefile.in	Wed Sep 26 03:43:49 2012 +0200
++++ b/scripts/Makefile.in	Wed Sep 26 20:41:15 2012 +0200
+@@ -803,7 +803,7 @@
+ mysql_fix_privilege_tables_sql.c: comp_sql.c mysql_fix_privilege_tables.sql
+ 	$(MAKE) $(AM_MAKEFLAGS) comp_sql$(EXEEXT)
+ 	sleep 2
+-	$(top_builddir)/scripts/comp_sql$(EXEEXT) \
++	comp_sql$(EXEEXT) \
+ 	  mysql_fix_privilege_tables \
+ 	    $(top_srcdir)/scripts/mysql_fix_privilege_tables.sql $@
+ 
+diff -r 7cfedcbb7a68 -r 7eb7c761b8db sql/Makefile.in
+--- a/sql/Makefile.in	Wed Sep 26 03:43:49 2012 +0200
++++ b/sql/Makefile.in	Wed Sep 26 20:41:15 2012 +0200
+@@ -1309,7 +1309,7 @@
+ # this avoid the rebuild of the built files in a source dist
+ lex_hash.h:	gen_lex_hash.cc lex.h
+ 		$(MAKE) $(AM_MAKEFLAGS) gen_lex_hash$(EXEEXT)
+-		./gen_lex_hash$(EXEEXT) > $@-t
++		gen_lex_hash$(EXEEXT) > $@-t
+ 		$(MV) $@-t $@
+ 
+ # We might have some stuff not built in this build, but that we want to install
+--- a/sql/Makefile.am @0:805713db2c11	2012-12-16 01:33:35.000000000 +0100
++++ b/sql/Makefile.am	2012-12-16 01:33:11.000000000 +0100
+@@ -174,13 +174,13 @@
+ # This generates lex_hash.h
+ # NOTE Built sources should depend on their sources not the tool
+ # this avoid the rebuild of the built files in a source dist
+ lex_hash.h:	gen_lex_hash.cc lex.h
+ 		$(MAKE) $(AM_MAKEFLAGS) gen_lex_hash$(EXEEXT)
+-		./gen_lex_hash$(EXEEXT) > $@-t
++		gen_lex_hash$(EXEEXT) > $@-t
+ 		$(MV) $@-t $@
+ 
+ # For testing of udf_example.so
+ udf_example_la_SOURCES= udf_example.c
+ udf_example_la_LDFLAGS= -module -rpath $(pkglibdir)
