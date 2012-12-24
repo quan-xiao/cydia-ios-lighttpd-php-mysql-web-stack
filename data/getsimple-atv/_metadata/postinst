@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chown -R daemon:_www /var/www/getsimple
+
+exit 0

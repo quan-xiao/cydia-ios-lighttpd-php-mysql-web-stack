@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ $1 == remove ]; then
+ if [ -d /var/www/getsimple ]; then
+   rm -r /var/www/getsimple   
+ fi
+fi
+
+exit 0
+

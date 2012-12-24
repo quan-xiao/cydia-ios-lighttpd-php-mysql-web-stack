@@ -1,0 +1,19 @@
+GetSimple is an XML based, stand-a-alone, fully independant and lite Content Management System.. After the installation please open Safari and open the side 'http://your_ios_device/dokuwiki/getsimple'.
+ GetSimple is an XML based, stand-a-alone, fully independant and lite Content Management System.
+ 
+ With the cydia packages below you can use GetSimple CMS: 
+ - 'atv-lighttpd-php-mysql' for AppleTV
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad
+   (For safety reasons, you should not use the touch- package)
+ 
+ The package files will be stored at /var/www/getsimple
+ During the installation the permission of some folders are set to the owner 'daemon:_www'. 
+ 
+ Please open Safari at your iOS Device and type in 'http://localhost/getsimple'.
+ (Please use Safari. I don't know why, but e.g. Chrome create some problems.)
+ 
+ If you remove this package, please note that all content in /var/www/getsimple will be deleted.
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB . 
+ 
