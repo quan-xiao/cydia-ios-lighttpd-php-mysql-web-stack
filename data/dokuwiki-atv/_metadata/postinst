@@ -1,0 +1,22 @@
+#!/bin/sh
+
+chown -R daemon:_www /var/www/dokuwiki
+
+
+if [ -f /etc/lighttpd.conf ]; then
+   echo ' ' >> /etc/lighttpd.conf
+   echo 'include "lighttpd/mod_dokuwiki.conf"' >> /etc/lighttpd.conf
+
+else
+if [ -f /etc/lighttpd/lighttpd-atv.conf ]; then
+   echo ' ' >> /etc/lighttpd/lighttpd-atv.conf
+   echo 'include "mod_dokuwiki.conf"' >> /etc/lighttpd/lighttpd-atv.conf
+fi
+fi 
+
+echo " "
+echo "Please restart your Lighttpd server!"
+echo "After that secure DokuWiki folders are hidden."
+echo " "
+
+exit 0
