@@ -15,7 +15,7 @@ A very small, supposedly fast, webserver. Have a look at http://goo.gl/LXfUB .
  After the installation you can place your web content here:
  /var/www
  
- Lighttpd have to be  running as user 'deamon'. Please use the group _www.
+ Lighttpd have to be  running as user 'daemon'. Please use the group _www.
  
  If you would like keep it simple then just install one of the cydia packages below:
  - 'atv-lighttpd-php-mysql' for AppleTV 
