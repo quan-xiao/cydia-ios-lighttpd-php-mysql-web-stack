@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ $1 == remove ]; then
+ if [ -d /var/www/joomla ]; then
+   rm -r /var/www/joomla   
+ fi
+fi
+
+ 
+exit 0
+

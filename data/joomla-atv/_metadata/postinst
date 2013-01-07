@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#Prepar the Joomla install script permissions
+chown daemon:_www /var/www/joomla -R 
+
+echo " "
+echo " "
+echo "After the installation please open Safari at your iOS Device and type in 'http://localhost/joomla'."
+echo " "
+
+exit 0
