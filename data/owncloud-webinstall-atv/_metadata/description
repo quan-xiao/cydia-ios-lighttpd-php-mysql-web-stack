@@ -1,0 +1,34 @@
+Web installer for the newest available ownCloud version. After the installation restart your lighttpd-Server, open Safari and load the side 'http://your_ios_device/setup-owncloud.php'.
+ Web installer for the newest available ownCloud version.
+ ownCloud is a flexible, open source file sync and share solution. Whether using a mobile device, 
+ a workstation, or a web client, ownCloud provides the ability to put the right files at your employees. 
+ Fingertips on any device in one simple-to-use, secure, private and controlled solution.
+ 
+ With the cydia packages below you can use ownCloud: 
+ - 'atv-lighttpd-php-mysql' for AppleTV
+ - 'ios-lighttpd-php-mysql' for iPhone/iPad
+ - 'touch-lighttpd-php-mysql' for iPhone/iPad
+   (For safety reasons, you should not use the touch- package)
+ 
+ After the download please restart your lighttpd-Server and open Safari at your iOS Device and type in 'http://localhost/setup-owncloud.php'.
+ 
+ (Please use Safari. I don't know why, but e.g. Chrome create some problems.)
+ The webinstaller will create files at /var/www/owncloud with permissions for the user 'daemon:_www'.
+ 
+ During the installation you can choose MySQL or SQLite3.
+ 
+ Using of SQLite3:
+ - Quick, save and easy. Need not mutch memory.
+ 
+ Using of MySQL:
+ - You will get some errors one or two times. But that is not a problem. Reload the page and everything is fine.
+ - You will needs an existing MySQL user and an existing MySQL database.
+ - Before you start the ownCloud Setup, please create these with 'Adminer' or with the cydia package 'phpmyadmin-atv'.
+  
+ After the web installation you will find your ownCloud at 'http://your_ios_device/owncloud'
+ 
+ If you remove this package, please note that all content in /var/www/owncloud will be deleted.
+ If you use MySQL, the database will not be removed. 
+ 
+ If you would like to get more package information, please have a look at http://goo.gl/LXfUB . 
+ 

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+#Prepar the onwCloud install script permissions
+chown daemon:_www /var/www/setup-owncloud.php
+
+#If we don't have write permissions in /var/www, we have to prepar something 
+mkdir -p /var/www/owncloud
+chown daemon:_www /var/www/owncloud
+
+##check for an older installation and fix the permissions
+#if [ -d /var/www/owncloud ]; then
+#   chown daemon:_www /var/www/owncloud -R
+#fi
+
+# check for the installation typ (touch or atv/ios) and modify the lighttpd config file  
+if [ -f /etc/lighttpd.conf ]; then
+   echo ' ' >> /etc/lighttpd.conf
+   echo 'include "lighttpd/mod_owncloud.conf"' >> /etc/lighttpd.conf
+
+else
+if [ -f /etc/lighttpd/lighttpd-atv.conf ]; then
+   echo ' ' >> /etc/lighttpd/lighttpd-atv.conf
+   echo 'include "mod_owncloud.conf"' >> /etc/lighttpd/lighttpd-atv.conf
+fi
+fi 
+
+echo " "
+echo "Please restart your Lighttpd server!"
+echo "After that the folder /var/www/owncloud/data is hidden."
+echo " "
+echo "Please open Safari at your iOS Device and type in 'http://localhost/setup-owncloud.php'."
+echo "After the installation you will find your ownCloud at 'http://your_ios_device/owncloud'."
+echo " "
+
+exit 0
