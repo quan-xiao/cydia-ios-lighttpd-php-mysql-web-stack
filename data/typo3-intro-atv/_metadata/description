@@ -1,12 +1,10 @@
-The TYPO3 Introduction Package. Just to see how Typo3 does work. After the installation restart your lighttpd-Server, open Safari and load the side 'http://your_ios_device:8080'.
- The TYPO3 Introduction Package. Just to see how Typo3 does work.
- If you would like start with professional Typo3 development, I recommended to install the sources and the dummy packages from the Typo3 website.
+The TYPO3 Introduction Package. Just to see how TYPO3 does work. After the installation restart your lighttpd-Server, open Safari and load the side 'http://your_ios_device:8080'.
+ The TYPO3 Introduction Package. Just to see how TYPO3 does work.
+ If you would like start with professional TYPO3 development, I recommended to install the sources and the dummy packages from the TYPO3 website.
 
  With the cydia packages below you can use Typo3: 
  - 'atv-lighttpd-php-mysql' for AppleTV
  - 'ios-lighttpd-php-mysql' for iPhone/iPad
- - 'touch-lighttpd-php-mysql' for iPhone/iPad 
-   (For safety reasons, you should not use the touch- package)
  
  The TYPO3 Setup needs an existing MySQL user and an existing MySQL database.
  Before you start the TYPO3 Setup, please create these with 'Adminer' or with the cydia package 'phpmyadmin-atv'. 
