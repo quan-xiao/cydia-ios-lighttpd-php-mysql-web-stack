@@ -145,6 +145,18 @@ Conflicts: $(cat "${PKG_DATA}/_metadata/conflicts")
 EOF
 fi
 
+if [[ -e ${PKG_DATA}/_metadata/role ]]; then
+    cat <<EOF
+Role: $(cat "${PKG_DATA}/_metadata/role")
+EOF
+fi
+
+if [[ -e ${PKG_DATA}/_metadata/tag ]]; then
+    cat <<EOF
+Tag: $(cat "${PKG_DATA}/_metadata/tag")
+EOF
+fi
+
 if [[ -e ${PKG_DATA}/_metadata/provides ]]; then
     cat <<EOF
 Provides: $(cat "${PKG_DATA}/_metadata/provides")
