@@ -6,7 +6,7 @@ echo PKG_TARG = "${PKG_TARG}"
 
 pkg:setup
 
-export CPPFLAGS="-I$(PKG_DEST_ freetype2-atv)/usr/include/freetype2 -I$(PKG_DEST_ libxml2)/usr/include/libxml2"
+export CPPFLAGS="-I$(PKG_DEST_ _libfreetype)/usr/include/freetype2 -I$(PKG_DEST_ libxml2)/usr/include/libxml2"
 
 export PATH=$PATH:"$(PKG_DEST_ libxml2)"/usr/bin
 
