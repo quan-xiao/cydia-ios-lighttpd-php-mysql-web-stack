@@ -11,7 +11,7 @@ then
  rm /etc/com.ios.webserver.php.ini
  rm /etc/com.ios.webserver.load_all.ini
 else
- # If you install the package, you  need all the original config files.
+ # If you install the package, you need all the original config files.
  #Create needed folders
  mkdir -p /var/log/lighttpd
  mkdir -p /etc/lighttpd
@@ -61,8 +61,8 @@ else
  echo '<br>ownCloud, WordPress, Contao, Textpattern,TYPO3, Drupal, MadeSimple,<br>Symphony, WebsiteBacker, Joomla!, miniBB, MyBB, phpBB, phpMyForum<br>' >> /var/www/index.html
  echo 'or other web presences :-)</h2><h2><br>' >> /var/www/index.html
  echo 'The following web page will give you some more information:<br>' >> /var/www/index.html
- echo '<a target="_blank" href="http://code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack/wiki/Main">' >> /var/www/index.html
- echo 'code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack</a>' >> /var/www/index.html
+ echo '<a target="_blank" href="http://ios-webstack.tk">' >> /var/www/index.html
+ echo 'iOS-WebStack.tk</a>' >> /var/www/index.html
  echo '</h2><br><br><h2>If you like this iOS WebServer Compilation, please support <a ' >> /var/www/index.html
  echo 'href="http://www.supportunicef.org" target="_blank">UNICEF</a> with a small donation. Thank you.</h2>' >> /var/www/index.html
  echo '<br></div></body></html>' >> /var/www/index.html

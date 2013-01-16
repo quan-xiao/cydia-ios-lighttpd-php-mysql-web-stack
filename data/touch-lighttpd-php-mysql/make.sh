@@ -16,5 +16,9 @@ cp ${PKG_DATA}/com.ios.webserver.load_all.ini ${PKG_DEST}/etc/
 #Lighttpd
 cp  ${PKG_DATA}/com.ios.webserver.lighttpd.conf ${PKG_DEST}/etc/
 
-
 cp  ${PKG_DATA}/adminer.php ${PKG_DEST}/var/www/
+
+#The BigBoss told me that this packages must includes all files from the packages PHP53
+#Therefore copy all files from PHP53 to this packages. (You have to compile PHP53 before)
+cp -r "$(PKG_DEST_ php53)"/* "${PKG_DEST}"/
+
