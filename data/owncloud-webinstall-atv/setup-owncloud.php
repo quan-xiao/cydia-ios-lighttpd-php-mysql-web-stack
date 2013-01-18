@@ -215,7 +215,7 @@ class oc_setup {
 		$error=oc_setup::install();
 	
 		if($error=='') {
-			$txt='ownCloud is now installed.<br />You will find your ownCloud website here: http://Your_iOS_Device/owncloude<br />Do not forget to restart your Lighttpd-Server.<br />Otherwise you will get a Security Warning on the next page.';
+			$txt='ownCloud is now installed.<br />You will find your ownCloud website here: http://Your_iOS_Device/owncloud<br />Do not forget to restart your Lighttpd-Server.<br />Otherwise you will get a Security Warning on the next page.';
 			oc_setup::showcontent('Success',$txt,3);
 		}else{
 			$txt='ownCloud is NOT installed<br />'.$error;
