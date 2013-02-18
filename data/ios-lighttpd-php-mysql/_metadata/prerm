@@ -1,6 +1,5 @@
 #!/bin/sh
 
-if [ $1 != upgrade ]; then
  launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.switch.plist 2>&1 | true
  launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.switch.plist 2>&1 | true
  
@@ -13,8 +12,8 @@ if [ $1 != upgrade ]; then
  if [ "$LIGHTTPD" != "" ]; then
   kill -s TERM $LIGHTTPD
  fi
-fi
 
+if [ $1 != upgrade ]; then
  rm /Library/LaunchDaemons/com.atv.lighttpd.switch.plist
  rm /Library/LaunchDaemons/com.atv.mysql.switch.plist
  rm /var/mobile/Library/Preferences/com.atv.lighttpd_mysql.plist
@@ -25,6 +24,6 @@ fi
  rm -r /var/log/lighttpd
  rm /var/www/phpinfo.php
  rm /var/www/index.html
-
+fi
 exit 0
 

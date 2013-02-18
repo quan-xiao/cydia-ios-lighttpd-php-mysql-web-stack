@@ -1,9 +1,9 @@
 #!/bin/sh
 
 #Just install/copy config files if they are not exist.
-
-if [ $1 == upgrade ]
+if [ -f /etc/lighttpd/lighttpd-atv.conf ] 
 then
+ echo "UPDATE atv-lighttpd-php-mysql"
  # It is an upgrade. All config files are untouched.
  # But delete the package configfiles.
  rm /etc/com.atv.web-stack.mod_fastcgi-atv.conf
@@ -11,6 +11,8 @@ then
  rm /etc/com.atv.web-stack.php.ini
  rm /etc/com.atv.web-stack.load_all.ini
 else
+ echo "INSTALL  atv-lighttpd-php-mysql"
+ #It is an new install.
  #Create needed folders
  mkdir -p /var/log/lighttpd
  mkdir -p /etc/lighttpd
@@ -44,8 +46,8 @@ else
  echo '<br>ownCloud, WordPress, Contao, Textpattern,TYPO3, Drupal, MadeSimple,<br>Symphony, WebsiteBacker, Joomla!, miniBB, MyBB, phpBB, phpMyForum<br>' >> /var/www/index.html
  echo 'or other web presences :-)</h2><h2><br>' >> /var/www/index.html
  echo 'The following web page will give you some more information:<br>' >> /var/www/index.html
- echo '<a target="_blank" href="http://code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack/wiki/Main">' >> /var/www/index.html
- echo 'code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack</a>' >> /var/www/index.html
+ echo '<a target="_blank" href="http://ios-webstack.tk">' >> /var/www/index.html
+ echo 'iOS-WebStack.tk</a>' >> /var/www/index.html
  echo '</h2><br><br><h2>If you like my iOS Web Stack Composition, please support <a ' >> /var/www/index.html
  echo 'href="http://www.supportunicef.org" target="_blank">UNICEF</a> with a small donation. Thank you.</h2>' >> /var/www/index.html
  echo '<br></div></body></html>' >> /var/www/index.html
@@ -56,36 +58,28 @@ else
    rm /var/mobile/Library/Preferences/com.atv.lighttpd_mysql.plist
  fi 
  
- #Start PreferenceLauncher Daemons
- launchctl load -w /Library/LaunchDaemons/com.atv.mysql.switch.plist 2>&1 | true
- launchctl load -w /Library/LaunchDaemons/com.atv.lighttpd.switch.plist 2>&1 | true 
- 
- #Set Root Password
- #echo "Launch the server. Wait 5 seconds... "
- #sleep 5
- #usr/local/bin/mysqladmin -u root password root
- #echo " "
- #echo "During the installation the password for the new created MySQL database for the user root@localhost was set to 'root'."
- #echo "Please reset your MySQL root password with the command below or install the cydia package 'phpmyadmin' to to that :"
- #echo "/usr/local/bin/mysql_secure_installation" 
- #echo " "
- 
  #Dobble Information
  echo " "
  echo "After the installationt you have to set your MySQL root user password with the installed tool 'Adminer'."
  echo "To do that, please start Safari on you iOS device and open following site:" 
  echo "http://localhost"
  echo " "
- 
- declare -a cydia
- cydia=($CYDIA)
- if [[ ${CYDIA+@} ]]; then
-     eval "echo 'finish:restart' >&${cydia[0]}"
- else
-     echo ""
-     echo "Please kill or restart 'Preferences'."
- fi 
 
 fi
+
+#Start PreferenceLauncher Daemons
+launchctl load -w /Library/LaunchDaemons/com.atv.mysql.switch.plist 2>&1 | true
+launchctl load -w /Library/LaunchDaemons/com.atv.lighttpd.switch.plist 2>&1 | true 
+
+declare -a cydia
+cydia=($CYDIA)
+if [[ ${CYDIA+@} ]]; then
+    eval "echo 'finish:restart' >&${cydia[0]}"
+else
+    echo ""
+    echo "Please kill or restart 'Preferences'."
+fi 
+
+
 exit 0
 
