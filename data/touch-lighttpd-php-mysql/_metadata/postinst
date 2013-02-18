@@ -2,8 +2,9 @@
 
 #Just install/copy config files if they are not exist.
 
-if [ $1 == upgrade ]
+if [ -f /etc/lighttpd/lighttpd-atv.conf ]
 then
+ echo "UPDATE touch-lighttpd-php-mysql"
  # It is an upgrade. All config files are untouched. 
  # But delete the package configfiles.
  rm /etc/com.ios.webserver.mod_fastcgi.conf
@@ -11,6 +12,7 @@ then
  rm /etc/com.ios.webserver.php.ini
  rm /etc/com.ios.webserver.load_all.ini
 else
+ echo "INSTALL touch-lighttpd-php-mysql"
  # If you install the package, you need all the original config files.
  #Create needed folders
  mkdir -p /var/log/lighttpd
