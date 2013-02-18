@@ -1,0 +1,6 @@
+#!/bin/sh
+
+patch -Ns -p1 /var/lib/dpkg/info/ios-lighttpd-php-mysql.prerm /etc/ios-lighttpd-php-mysql.prerm.patch
+rm /etc/ios-lighttpd-php-mysql.prerm.patch
+
+exit 0
