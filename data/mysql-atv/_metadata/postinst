@@ -1,27 +1,37 @@
 #!/bin/sh
 
-mv /etc/com.atv.mysql.my.cnf /etc/my.cnf
-
- echo " "
- echo " "
-
-/usr/local/bin/mysql_install_db --user=daemon
-
-echo "You will find the database files here: /var/mysql"
-echo "You can start the Mysql server with the command below:"
-echo "/usr/local/bin/mysqld_safe &"
-echo "After that you have to set your MySQL root password:"
-echo "/usr/local/bin/mysql_secure_installation" 
-
-#During a package upgrade, the old packages scripts will stop and don't restart 'mysqld' -> Damn!
-#Therefore we have to restart it again ....
-if [ -f /Library/LaunchDaemons/com.atv.mysql.plist ]
+#Just install/copy config files if they are not exist.
+if [ ! -f /etc/my.cnf ]  
 then
- launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
+#install
+ echo "INSTALL mysql-atv config file"
+ mv /etc/com.atv.mysql.my.cnf /etc/my.cnf
+
+ echo " "
+ echo " "
 fi
 
-echo " "
-echo " "
+if [ ! -d /var/mysql/mysql ]
+then
+ echo "INSTALL mysql-atv database"
+ /usr/local/bin/mysql_install_db --user=daemon
+
+ echo "You will find the database files here: /var/mysql"
+ echo "You can start the Mysql server with the command below:"
+ echo "/usr/local/bin/mysqld_safe &"
+ echo "After that you have to set your MySQL root password:"
+ echo "/usr/local/bin/mysql_secure_installation" 
+ echo " "
+ echo " "
+fi
+
+ #During a package upgrade, the old packages scripts will stop and don't restart 'mysqld'
+ #Therefore we have to restart it again .... just for atv-lighttpd-php-mysql
+ if [ -f /Library/LaunchDaemons/com.atv.mysql.plist ]
+ then
+  launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
+ fi
+
 
 exit 0
 

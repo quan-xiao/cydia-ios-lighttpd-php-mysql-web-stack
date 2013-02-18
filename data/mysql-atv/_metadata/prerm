@@ -1,15 +1,24 @@
 #!/bin/sh
-MYSQL=`ps -ax | grep '[m]ysql' | grep 'libexec' | awk '{ print $1 }'`
-if [ "$MYSQL" != "" ]; then
- kill -s TERM $MYSQL # 2>&1 | true
-fi
 
-echo " "
-echo " "
-echo "Your database files are not deleted!"
-echo "You will find they here: /var/mysql"
-echo " "
-echo " "
+ if [ -f /Library/LaunchDaemons/com.atv.mysql.plist  ]   #Just for atv-lighttpd-php-mysql
+ then
+    launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.plist 2>&1 | true
+ fi
+
+ MYSQL=`ps -ax | grep '[m]ysql' | grep 'libexec' | awk '{ print $1 }'`
+ if [ "$MYSQL" != "" ]; then
+  kill -s TERM $MYSQL # 2>&1 | true
+ fi
+
+if [[ $1 == remove  ]]    #see http://www.proulx.com/~bob/debian/hints/DpkgScriptOrder
+then
+ echo " "
+ echo " "
+ echo "Your database files are not deleted!"
+ echo "You will find they here: /var/mysql"
+ echo " "
+ echo " "
+fi
 
 exit 0
 
