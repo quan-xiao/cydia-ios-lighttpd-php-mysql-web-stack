@@ -8,7 +8,7 @@ else
 fi
 
 
-#During a package upgrade, the old packages scripts will stop and don't restart 'lighttpd' -> Damn!
+#During a package upgrade, the old package scripts will stop and don't restart 'lighttpd' -> Damn!
 #Therefore we have to restart it again ....
 if [ -f /Library/LaunchDaemons/com.atv.lighttpd.plist  ]
 then
@@ -24,3 +24,4 @@ echo "You can place your Lighttpd config file in /etc/lighttpd/"
 echo "You can place your web content in /var/www/"
 echo " "
 
+exit 0
