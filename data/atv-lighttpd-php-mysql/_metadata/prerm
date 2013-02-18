@@ -1,9 +1,7 @@
 #!/bin/sh
 
-if [ $1 != upgrade ]; then
  launchctl unload -w /Library/LaunchDaemons/com.atv.lighttpd.plist 2>&1 | true
  launchctl unload -w /Library/LaunchDaemons/com.atv.mysql.plist 2>&1 | true
-
 
  #Dobble Check
 
@@ -17,6 +15,7 @@ if [ $1 != upgrade ]; then
   kill -s TERM $MYSQL
  fi
 
+if [ $1 != upgrade ]; then
  rm /Library/LaunchDaemons/com.atv.lighttpd.plist
  rm /Library/LaunchDaemons/com.atv.mysql.plist
 

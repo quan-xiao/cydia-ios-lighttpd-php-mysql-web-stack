@@ -1,9 +1,9 @@
 #!/bin/sh
 
 #Just install/copy config files if they are not exist.
-
-if [ $1 == upgrade ]
+if [[ $1 == configure && $2 != "" ]]    #see http://www.proulx.com/~bob/debian/hints/DpkgScriptOrder
 then
+ echo "UPDATE atv-lighttpd-php-mysql"
  # It is an upgrade. All config files are untouched.
  # But delete the package configfiles.
  rm /etc/com.atv.web-stack.mod_fastcgi-atv.conf
@@ -11,6 +11,7 @@ then
  rm /etc/com.atv.web-stack.php.ini
  rm /etc/com.atv.web-stack.load_all.ini
 else
+ echo "INSTALL atv-lighttpd-php-mysql"
  # If you install the package, you  need all the original config files.
  #Create needed folders
  mkdir -p /var/log/lighttpd
@@ -31,7 +32,7 @@ else
  #Copy content to /var/www/phpinfo.php
  if [ -f /var/www/phpinfo.php ]
  then
- echo""
+    echo""
  else
     echo "<?PHP phpinfo ();?>" > /var/www/phpinfo.php
  fi
@@ -40,7 +41,7 @@ else
  #Copy demo content to /var/www/index.html
  if [ -f /var/www/index.html ]
  then
- echo""
+  echo""
  else
  echo '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>' > /var/www/index.html
  echo '<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>iOS Lighttpd-PHP-MySQL</title>' >> /var/www/index.html
@@ -56,17 +57,13 @@ else
  echo '<br>ownCloud, WordPress, Contao, Textpattern,TYPO3, Drupal, MadeSimple,<br>Symphony, WebsiteBacker, Joomla!, miniBB, MyBB, phpBB, phpMyForum<br>' >> /var/www/index.html
  echo 'or other web presences :-)</h2><h2><br>' >> /var/www/index.html
  echo 'The following web page will give you some more information:<br>' >> /var/www/index.html
- echo '<a target="_blank" href="http://code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack/wiki/Main">' >> /var/www/index.html
- echo 'code.google.com/p/cydia-ios-lighttpd-php-mysql-web-stack</a>' >> /var/www/index.html
+ echo '<a target="_blank" href="http://ios-webstack.tk">' >> /var/www/index.html
+ echo 'iOS-WebStack.tk</a>' >> /var/www/index.html
  echo '</h2><br><br><h2>If you like my iOS Web Stack Composition, please support <a ' >> /var/www/index.html
  echo 'href="http://www.supportunicef.org" target="_blank">UNICEF</a> with a small donation. Thank you.</h2>' >> /var/www/index.html
  echo '<br></div></body></html>' >> /var/www/index.html
  fi
 
- #Start Daemons
- launchctl load -w /Library/LaunchDaemons/com.atv.lighttpd.plist
- launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
- 
  #Dobble Information
  echo " "
  echo "After the installationt you can set your MySQL root user password with the command below:"
@@ -74,6 +71,11 @@ else
  echo " "
 
 fi
+
+ #Start Daemons
+ launchctl load -w /Library/LaunchDaemons/com.atv.lighttpd.plist
+ launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
+
 
 exit 0
 
