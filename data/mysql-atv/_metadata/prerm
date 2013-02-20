@@ -10,8 +10,10 @@
   kill -s TERM $MYSQL # 2>&1 | true
  fi
 
-if [[ $1 == remove  ]]    #see http://www.proulx.com/~bob/debian/hints/DpkgScriptOrder
+if [[ $1 != upgrade  ]]    #see http://www.proulx.com/~bob/debian/hints/DpkgScriptOrder
 then
+ rm /etc/my.cnf
+ rm /var/log/mysql.err*
  echo " "
  echo " "
  echo "Your database files are not deleted!"
