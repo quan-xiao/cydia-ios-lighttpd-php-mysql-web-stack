@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#Create the default PHP Extension Scan Folder
+if [ -f /etc/php.d ]
+then
+    echo""
+else
+    mkdir /etc/php.d
+fi
+
+echo " "
+echo "You have to place the PHP config file at /etc/php.ini"
+echo "The default PHP Extension Scan Folder is /etc/php.d"
+echo " "
+
+exit 0
+

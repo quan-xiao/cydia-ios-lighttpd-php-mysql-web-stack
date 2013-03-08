@@ -1,0 +1,50 @@
+# HG changeset patch
+# User JuS
+# Date 1347305053 -7200
+# Node ID edbe8e1c4acf18c9c44e33ad9bfe5a4aa81cb419
+# Parent  aae63db736517ddb375f3d02b5a70612991491e0
+# Comment: Use diffs from http://svn.telesphoreo.org/trunk/data/php
+
+diff -r aae63db73651 -r edbe8e1c4acf main/php.h
+--- a/main/php.h	Mon Sep 10 20:40:14 2012 +0200
++++ b/main/php.h	Mon Sep 10 21:24:13 2012 +0200
+@@ -419,7 +419,7 @@
+  */
+ 
+ #ifndef XtOffset
+-#if defined(CRAY) || (defined(__arm) && !(defined(LINUX) || defined(__riscos__)))
++#if defined(CRAY) || (defined(__arm) && !(defined(LINUX) || defined(__riscos__) || defined(__APPLE__)))
+ #ifdef __STDC__
+ #define XtOffset(p_type, field) _Offsetof(p_type, field)
+ #else
+diff -r aae63db73651 -r edbe8e1c4acf pear/Makefile.frag
+--- a/pear/Makefile.frag	Mon Sep 10 20:40:14 2012 +0200
++++ b/pear/Makefile.frag	Mon Sep 10 21:24:13 2012 +0200
+@@ -11,7 +11,7 @@
+ PEAR_SUFFIX = -ds a$(program_suffix)
+ 
+ install-pear-installer: $(SAPI_CLI_PATH)
+-	@$(top_builddir)/sapi/cli/php $(PEAR_INSTALL_FLAGS) pear/install-pear-nozlib.phar -d "$(peardir)" -b "$(bindir)" ${PEAR_PREFIX} ${PEAR_SUFFIX}
++	@php $(PEAR_INSTALL_FLAGS) $(builddir)/install-pear-nozlib.phar -d "$(peardir)" -b "$(bindir)" ${PEAR_PREFIX} ${PEAR_SUFFIX}
+ 
+ install-pear:
+ 	@echo "Installing PEAR environment:      $(INSTALL_ROOT)$(peardir)/"
+diff -r ed87dbb9034d -r 14d2b9c68a1a ext/phar/Makefile.frag
+--- a/ext/phar/Makefile.frag	Mon Sep 10 21:24:13 2012 +0200
++++ b/ext/phar/Makefile.frag	Mon Sep 10 22:35:27 2012 +0200
+@@ -26,13 +26,13 @@
+ 
+ $(builddir)/phar.php: $(srcdir)/build_precommand.php $(srcdir)/phar/*.inc $(srcdir)/phar/*.php $(SAPI_CLI_PATH)
+ 	-@echo "Generating phar.php"
+-	@$(PHP_PHARCMD_EXECUTABLE) $(PHP_PHARCMD_SETTINGS) $(srcdir)/build_precommand.php > $(builddir)/phar.php
++	@php $(PHP_PHARCMD_SETTINGS) $(srcdir)/build_precommand.php > $(builddir)/phar.php 
+ 
+ $(builddir)/phar.phar: $(builddir)/phar.php $(builddir)/phar/phar.inc $(srcdir)/phar/*.inc $(srcdir)/phar/*.php $(SAPI_CLI_PATH)
+ 	-@echo "Generating phar.phar"
+ 	-@rm -f $(builddir)/phar.phar
+ 	-@rm -f $(srcdir)/phar.phar
+-	@$(PHP_PHARCMD_EXECUTABLE) $(PHP_PHARCMD_SETTINGS) $(builddir)/phar.php pack -f $(builddir)/phar.phar -a pharcommand -c auto -x \\.svn -p 0 -s $(srcdir)/phar/phar.php -h sha1 -b "$(PHP_PHARCMD_BANG)"  $(srcdir)/phar/
++	@php $(PHP_PHARCMD_SETTINGS) $(builddir)/phar.php pack -f $(builddir)/phar.phar -a pharcommand -c auto -x \\.svn -p 0 -s $(srcdir)/phar/phar.php -h sha1 -b "$(PHP_PHARCMD_BANG)"  $(srcdir)/phar/
+ 	-@chmod +x $(builddir)/phar.phar
+ 
+ install-pharcmd: pharcmd

@@ -1,0 +1,19 @@
+--- a/configure.in@1:ed16a2aaef70	2012-11-14 20:07:02.000000000 +0100
++++ b/configure.in	2012-11-13 22:31:23.000000000 +0100
+@@ -286,13 +286,14 @@
+ esac
+ 
+ dnl activate some gcc specific optimizations for gcc >= 4
+ if test "$GCC" = "yes"; then
+   case $host_alias in
+   *darwin*)
+-    GCC_MAJOR_VERSION=`$CC -dumpversion | /usr/bin/sed -nE '1s/([[0-9]]+)\.[[0-9]]+\..*/\1/;1p'`
++   # All versions of GCC on Mac OS X are considered by configure to have broken -fvisibility=hidden
++   # https://issues.apache.org/ooo/show_bug.cgi?id=96994
+     ;;
+   *)
+     GCC_MAJOR_VERSION=`$CC --version | $SED -n '1s/[[^0-9]]*//;1s/\..*//;1p'`
+     ;;
+   esac
+   if test $GCC_MAJOR_VERSION -ge 4; then
+
