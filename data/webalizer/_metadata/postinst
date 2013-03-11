@@ -1,4 +1,8 @@
 #!/bin/sh
+if [ ! -d /var/www/webalizer ]
+then
+    mkdir /var/www/webalizer
+fi
 
 exit 0
 
