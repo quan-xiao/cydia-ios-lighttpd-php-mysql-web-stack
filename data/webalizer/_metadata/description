@@ -1,0 +1,10 @@
+The Webalizer is a fast, free web server log file analysis program. 
+ The Webalizer is a fast, free web server log file analysis program. 
+ It produces highly detailed, easily configurable usage reports in HTML format, for viewing with a standard web browser.
+ 
+ The configuration is prepaired for a iOS-WebStack installation.
+ You will find the statistic folder here: /var/www/webalizer
+ 
+ Security: 
+ Since your log contains lots of personal information of your visitors (such as IP address, Search string query and much more), it is a good idea to put statistic folder/directory in a password protected directory.
+ 

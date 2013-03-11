@@ -1,0 +1,17 @@
+--- a/configure.org	2013-03-10 18:31:27.000000000 -0500
++++ b/configure	2013-03-10 18:33:44.000000000 -0500
+@@ -3940,10 +3940,10 @@
+ 
+ if test "$GCC" = "yes"; then
+ 
+-  # Check whether --enable-static was given.
+-if test "${enable_static+set}" = set; then
+-  enableval=$enable_static; LDFLAGS="--static ${LDFLAGS}"
+-fi
++#  # Check whether --enable-static was given.
++#if test "${enable_static+set}" = set; then
++#  enableval=$enable_static; LDFLAGS="--static ${LDFLAGS}"
++#fi
+ 
+ 
+   if test "$IN_CFLAGS" = ""; then
