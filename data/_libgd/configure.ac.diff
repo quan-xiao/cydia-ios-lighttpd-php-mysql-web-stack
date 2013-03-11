@@ -1,0 +1,53 @@
+--- a/configure.ac	2013-03-10 16:20:25.000000000 -0500
++++ b/configure.ac	2013-03-10 16:26:38.000000000 -0500
+@@ -351,29 +351,29 @@
+ 
+ if test "$withval" != no; then
+ 
+-  if test -n "$FREETYPE_DIR"; then
+-    AC_PATH_PROG(FREETYPE_CONFIG,freetype-config,,[$FREETYPE_DIR/bin:$PATH])
+-  else
+-    AC_PATH_PROG(FREETYPE_CONFIG,freetype-config)
+-  fi
+-
+-  if test -n "$FREETYPE_CONFIG"; then
+-    if test -n "$FREETYPE_DIR"; then
+-      libft_INCLUDES="`$FREETYPE_CONFIG --cflags` -I$FREETYPE_DIR/include"
+-    else
+-      libft_INCLUDES=`$FREETYPE_CONFIG --cflags`
+-    fi
+-    libft_LDFLAGS=`$FREETYPE_CONFIG --libs`
+-    libft_LDFLAGS=`echo " $libft_LDFLAGS" |sed 's/ -l[[^ ]][[^ ]]*//g'`
+-  else
+-    if test -n "$FREETYPE_DIR"; then
++#  if test -n "$FREETYPE_DIR"; then
++#    AC_PATH_PROG(FREETYPE_CONFIG,freetype-config,,[$FREETYPE_DIR/bin:$PATH])
++#  else
++#    AC_PATH_PROG(FREETYPE_CONFIG,freetype-config)
++#  fi
++#
++#  if test -n "$FREETYPE_CONFIG"; then
++#    if test -n "$FREETYPE_DIR"; then
++#      libft_INCLUDES="`$FREETYPE_CONFIG --cflags` -I$FREETYPE_DIR/include"
++#    else
++#      libft_INCLUDES=`$FREETYPE_CONFIG --cflags`
++#    fi
++#    libft_LDFLAGS=`$FREETYPE_CONFIG --libs`
++#    libft_LDFLAGS=`echo " $libft_LDFLAGS" |sed 's/ -l[[^ ]][[^ ]]*//g'`
++#  else
++#    if test -n "$FREETYPE_DIR"; then
+       libft_INCLUDES="-I$FREETYPE_DIR/include/freetype2 -I$FREETYPE_DIR/include"
+       libft_LDFLAGS="-L$FREETYPE_DIR/lib"
+-    else
+-      libft_INCLUDES=""
+-      libft_LDFLAGS=""
+-    fi
+-  fi
++#    else
++#      libft_INCLUDES=""
++#      libft_LDFLAGS=""
++#    fi
++#  fi
+ 
+   _cppflags="$CPPFLAGS"
+   _ldflags="$LDFLAGS"

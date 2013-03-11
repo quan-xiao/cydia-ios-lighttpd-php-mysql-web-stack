@@ -1,0 +1,5 @@
+GD is a library for the dynamic creation of images by programmers.
+ GD is an open source code library for the dynamic creation of images by programmers.
+ 
+ This package contains the shared GD library.
+ It is linked again PNG, JPEG and FreeType.
