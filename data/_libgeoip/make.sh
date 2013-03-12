@@ -6,7 +6,7 @@ echo PKG_TARG = "${PKG_TARG}"
 
 pkg:setup
 #autoconf-2.69 
-pkg:configure ac_cv_func_malloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes 
+pkg:configure ac_cv_func_malloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes --prefix=/usr/local --sysconfdir=/etc
 make
 pkg:install  
 #make install

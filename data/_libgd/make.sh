@@ -9,7 +9,7 @@ pkg:setup
 autoconf 
 #export CC="${PKG_TARG}"-gcc
 export CFLAGS=-I"$(PKG_DEST_ _libpng)"/usr/include 
-pkg:configure  --with-png="$(PKG_DEST_ _libpng)"/usr --with-jpeg="$(PKG_DEST_ _libjpeg)"/usr --with-freetype="$(PKG_DEST_ _libfreetype)"/usr
+pkg:configure  --prefix=/usr/local --with-png="$(PKG_DEST_ _libpng)"/usr --with-jpeg="$(PKG_DEST_ _libjpeg)"/usr --with-freetype="$(PKG_DEST_ _libfreetype)"/usr
 export CFLAGS='-mthumb'
 make
 pkg:install  
