@@ -1,7 +1,9 @@
 #!/bin/sh
-if [ ! -d /var/www/webalizer ]
+if [ -f /var/www/webalizer/index.html ]
 then
-    mkdir /var/www/webalizer
+   rm /var/www/webalizer/tk.webstack.ios.index.html
+else
+   mv /var/www/webalizer/tk.webstack.ios.index.html /var/www/webalizer/index.html
 fi
 
 exit 0
