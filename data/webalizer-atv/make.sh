@@ -14,4 +14,6 @@ rm "${PKG_DEST}"/etc/webalizer.conf.sample
 cp "${PKG_DATA}"/webalizer.conf "${PKG_DEST}"/etc/webalizer.conf
 
 mkdir -p "${PKG_DEST}"/var/www/webalizer
+mkdir -p "${PKG_DEST}"/usr/local/share/GeoDB
 cp "${PKG_DATA}"/tk.webstack.ios.index.html "${PKG_DEST}"/var/www/webalizer
+cp "${PKG_DATA}"/GeoDB.dat "${PKG_DEST}"/usr/local/share/GeoDB
