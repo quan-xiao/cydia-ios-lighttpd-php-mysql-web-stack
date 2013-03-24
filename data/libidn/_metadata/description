@@ -1,0 +1,3 @@
+Libidn's purpose is to encode and decode internationalized domain names. 
+ Libidn's purpose is to encode and decode internationalized domain names.
+ This package contains the shared IDN library.
