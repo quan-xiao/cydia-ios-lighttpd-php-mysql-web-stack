@@ -1,0 +1,3 @@
+Libntlm implements Microsoft's NTLM authentication.
+ Libntlm implements Microsoft's NTLM authentication.
+ This package contains the shared NTLM library.
