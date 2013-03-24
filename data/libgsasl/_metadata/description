@@ -1,0 +1,3 @@
+Libgsasl is an implementation of the Simple Authentication and Security Layer framework and a few common SASL mechanisms.
+ Libgsasl is an implementation of the Simple Authentication and Security Layer framework and a few common SASL mechanisms. 
+ This package contains the shared GNU SASL library.
