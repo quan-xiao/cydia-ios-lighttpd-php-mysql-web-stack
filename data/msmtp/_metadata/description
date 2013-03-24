@@ -1,0 +1,20 @@
+msmtp is an SMTP client.
+ msmtp is an SMTP client.
+ In the default mode, it transmits a mail to an SMTP server (for example at a free mail provider) which takes care of further delivery.
+ To use this program with your mail user agent (MUA), create a configuration file with your mail account(s) and tell your MUA to call msmtp instead of /usr/sbin/sendmail.
+ 
+ Features include:
+ 
+ Sendmail compatible interface (command line options and exit codes).
+ TLS/SSL support, including client certificates.
+ Authentication methods PLAIN, LOGIN, CRAM-MD5, EXTERNAL, SCRAM-SHA-1, DIGEST-MD5, and NTLM.
+ IDN support. 
+ PIPELINING support for increased transmission speed.
+ DSN (Delivery Status Notification) support.
+ RMQS (Remote Message Queue Starting) support (ETRN keyword).
+ IPv6 support.
+ LMTP support.
+ Support for multiple accounts. 
+
+ To get more information run 
+ msmtp --version
