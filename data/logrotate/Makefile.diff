@@ -1,0 +1,68 @@
+--- a/Makefile	2012-10-04 02:59:14.000000000 -0500
++++ b/Makefile_new	2013-03-28 15:13:11.000000000 -0500
+@@ -20,60 +20,16 @@
+ LOADLIBES += -lacl
+ endif
+ 
+-# HP-UX using GCC
+-ifeq ($(OS_NAME),HP-UX)
+-    ifeq ($(RPM_OPT_FLAGS),)
+-        RPM_OPT_FLAGS = -O2
+-    endif
+-    CC = gcc
+-    INSTALL = cpset
+-    ifeq ($(POPT_DIR),)
+-        POPT_DIR = /usr/local
+-    endif
+-    ifeq ($(HPLX_DIR),)
+-	HPLX_DIR = /usr/local/hplx
+-    endif
+-    LOADLIBES += -lhplx -L$(HPLX_DIR)/lib
+-    ifeq ($(BASEDIR),)
+-	BASEDIR = /usr/local
+-    endif
+-endif
+-
+-# Solaris using gcc
+-ifeq ($(OS_NAME),SunOS)
+-    CFLAGS = -D_GNU_SOURCE -D$(OS_NAME) -DVERSION=\"$(VERSION)\" $(RPM_OPT_FLAGS) $(LFS)
+-    CC ?= gcc
+-    CPP = $(CC) -E -M
+-    INSTALL = /usr/ucb/install
+-    ifeq ($(CC),cc)
+-        CPP = cc -xM
+-    endif
+-    BASEDIR ?= /usr/local
+-endif
+-
+-# Red Hat Linux
++# Cross compile on Linux
+ ifeq ($(OS_NAME),Linux)
+     INSTALL = install
+-    BASEDIR = /usr
+-endif
+-
+-# FreeBSD
+-ifeq ($(OS_NAME),FreeBSD)
+-    LOADLIBES += -L${LOCALBASE}/lib
+-    CFLAGS += -I${LOCALBASE}/include
+-    PREFIX=
+-endif
+-
+-ifeq ($(OS_NAME),NetBSD)
+-    CFLAGS += -I/usr/include
+-    CFLAGS += -I$(BASEDIR)/include
+-    LOADLIBES += -L/usr/lib
+-    LOADLIBES += -L$(BASEDIR)/lib -Wl,-R,$(BASEDIR)/lib
++    BASEDIR = /usr/local
++    CFLAGS += -O2 -mthumb
+ endif
+ 
+ ifneq ($(POPT_DIR),)
+-    CFLAGS += -I$(POPT_DIR)
+-    LOADLIBES += -L$(POPT_DIR)
++    CFLAGS += -I$(POPT_DIR)/include
++    LOADLIBES += -L$(POPT_DIR)/lib
+ endif
+ 
+ ifneq ($(STATEFILE),)
