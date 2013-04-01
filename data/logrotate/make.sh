@@ -12,6 +12,7 @@ make
 
 mkdir -p "${PKG_DEST}"/usr/local/sbin
 mkdir -p "${PKG_DEST}"/etc
+mkdir -p "${PKG_DEST}"/etc/logrotate.d
 chmod 755 logrotate
 cp logrotate "${PKG_DEST}"/usr/local/sbin 
 cp "${PKG_DATA}"/logrotate.conf "${PKG_DEST}"/etc
