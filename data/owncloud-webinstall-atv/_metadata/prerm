@@ -13,6 +13,11 @@ fi
 if [ -f /etc/lighttpd.conf ];then
   sed -i '/mod_owncloud/d' /etc/lighttpd.conf
 fi
+
+if [ -f /etc/lighttpd/mod_fastcgi-atv.conf ]; then
+      sed -i 's/"PHP_FCGI_CHILDREN" => "2" #need it for ownCloud >= 5/"PHP_FCGI_CHILDREN" => "1"/' /etc/lighttpd/mod_fastcgi-atv.conf
+fi
+
  
 exit 0
 

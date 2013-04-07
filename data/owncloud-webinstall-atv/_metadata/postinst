@@ -24,12 +24,19 @@ if [ -f /etc/lighttpd/lighttpd-atv.conf ]; then
 fi
 fi 
 
+# Since ownCloud 5.x we need more the one PHP child instance.
+# check for mod_fastcgi-atv.conf
+if [ -f /etc/lighttpd/mod_fastcgi-atv.conf ]; then
+      sed -i 's/"PHP_FCGI_CHILDREN" => "1"/"PHP_FCGI_CHILDREN" => "2" #need it for ownCloud >= 5/' /etc/lighttpd/mod_fastcgi-atv.conf
+fi
+
 echo " "
-echo "Please restart your Lighttpd server!"
-echo "After that the folder /var/www/owncloud/data is hidden."
+echo "You must restart your Lighttpd server!!!"
 echo " "
-echo "Please open Safari at your iOS Device and type in 'http://localhost/setup-owncloud.php'."
+echo "After that, please open Safari at your iOS Device and type in 'http://localhost/setup-owncloud.php'."
 echo "After the installation you will find your ownCloud at 'http://your_ios_device/owncloud'."
+echo " "
+echo "Again: You must restart your Lighttpd server!!!"
 echo " "
 
 exit 0
