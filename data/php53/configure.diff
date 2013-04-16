@@ -1,0 +1,11 @@
+--- a/configure	2013-04-14 17:06:29.000000000 -0500
++++ b/configure	2013-04-14 17:12:20.000000000 -0500
+@@ -28454,7 +28454,7 @@
+   
+   echo $ac_n "checking for SSL support in libcurl""... $ac_c" 1>&6
+ echo "configure:28457: checking for SSL support in libcurl" >&5
+-  CURL_SSL=`$CURL_CONFIG --feature | $EGREP SSL`
++  CURL_SSL=`$CURL_CONFIG --features | grep SSL`
+   if test "$CURL_SSL" = "SSL"; then
+     echo "$ac_t""yes" 1>&6
+     cat >> confdefs.h <<\EOF
