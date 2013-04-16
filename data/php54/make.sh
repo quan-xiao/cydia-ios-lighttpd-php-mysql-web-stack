@@ -16,16 +16,16 @@ export INSTALL_ROOT="${PKG_DEST}"
 
 autoconf 
 export CC="${PKG_TARG}"-gcc 
-pkg:configure  --prefix=/usr/local --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --without-pear --enable-calendar=shared --with-iconv=shared,"${PKG_ROOT}"/usr --with-curl=shared,"$(PKG_DEST_ curl)"/usr --enable-exif=shared --with-gd=shared --enable-gd-native-ttf --with-jpeg-dir="$(PKG_DEST_ _libjpeg)"/usr --with-png-dir="$(PKG_DEST_ _libpng)"/usr --with-pdo --with-sqlite3=shared --with-pdo-sqlite=shared --enable-mysqlnd=shared --with-pdo-mysql=shared,mysqlnd --with-mysql=shared,mysqlnd --with-mysqli=shared,mysqlnd --enable-mbstring=shared --with-mcrypt=shared,"$(PKG_DEST_ _libmcrypt)"/usr --with-zlib-dir="${PKG_ROOT}"/usr --enable-zip=shared --with-bz2=shared --with-openssl=shared,"$(PKG_DEST_ openssl)"/usr --enable-gd-jis-conv --with-xsl=shared --with-libxml-dir="$(PKG_DEST_ _libxml2)"/usr --with-freetype-dir="$(PKG_DEST_ _libfreetype)"/usr --enable-soap=share --enable-sockets
+pkg:configure  --prefix=/usr/local --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --without-pear --enable-calendar=shared --with-iconv=shared,"${PKG_ROOT}"/usr --with-curl=shared,"$(PKG_DEST_ curl)"/usr --enable-exif=shared --with-gd=shared --enable-gd-native-ttf --with-jpeg-dir="$(PKG_DEST_ _libjpeg)"/usr --with-png-dir="$(PKG_DEST_ _libpng)"/usr --with-pdo --with-sqlite3=shared,"${PKG_ROOT}"/usr --with-pdo-sqlite=shared --enable-mysqlnd=shared --with-pdo-mysql=shared,mysqlnd --with-mysql=shared,mysqlnd --with-mysqli=shared,mysqlnd --enable-mbstring=shared --with-mcrypt=shared,"$(PKG_DEST_ _libmcrypt)"/usr --with-zlib-dir="${PKG_ROOT}"/usr --enable-zip=shared --with-bz2=shared --with-openssl=shared --with-openssl-dir="$(PKG_DEST_ openssl)"/usr --enable-gd-jis-conv --with-xsl=shared --with-libxml-dir="$(PKG_DEST_ _libxml2)"/usr --with-freetype-dir="$(PKG_DEST_ _libfreetype)"/usr --enable-soap=share --enable-ftp=shared --enable-sockets 
 
 #Bad news: It could be that 'configure' found the host system libxml2 libs and includes!
-#Regarding the define of LIBXML_VERSION we need the LIBXML2 include files 
-#from the SDK  and not the files from telesphoreo or from the host. 
+#Regarding the define of LIBXML_VERSION we need the LIBXML2 include files
+#from the SDK  and not the files from telesphoreo or from the host.
 #Fastest solution -> we have to change the libxml2 search path in Makefile
 sed -ie "s{-I/usr/include/libxml2{-I${PKG_ROOT}/usr/include/libxml2 -I${PKG_ROOT}/usr/include/libxml2/libxml{" Makefile
 
 export CFLAGS='-mthumb'
-make  
+make ZEND_EXTRA_LIBS='-lresolv'
 make install
 
 
