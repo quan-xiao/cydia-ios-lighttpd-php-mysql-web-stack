@@ -1,0 +1,11 @@
+--- a/configure	2013-04-13 18:05:48.000000000 -0500
++++ b/configure	2013-04-13 18:06:58.000000000 -0500
+@@ -28621,7 +28621,7 @@
+ 
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for SSL support in libcurl" >&5
+ $as_echo_n "checking for SSL support in libcurl... " >&6; }
+-  CURL_SSL=`$CURL_CONFIG --feature | $EGREP SSL`
++  CURL_SSL=`$CURL_CONFIG --features | grep SSL`
+   if test "$CURL_SSL" = "SSL"; then
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
