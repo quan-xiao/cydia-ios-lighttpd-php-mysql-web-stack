@@ -11,25 +11,13 @@
                 <key>icon</key>
                 <string>atv.lighttpd_mysql.png</string>
         </dict>
-	<key>items</key>
+        <key>items</key>
         <array>
                 <dict>
                         <key>cell</key>
-                        <string>PSSwitchCell</string>
-                        <key>default</key>
-                        <true/>
-                        <key>defaults</key>
-                        <string>com.atv.lighttpd_mysql</string>
-                        <key>key</key>
-                        <string>lighttpd_Enabled</string>
-			<key>label</key>
-                        <string>Enable Lighttpd Server</string>
-                </dict>
-                <dict>
-                        <key>cell</key>
                         <string>PSGroupCell</string>
-                        <key>footerText</key>
-                        <string>Did you already changed your MySQL root password?</string>
+                        <key>label</key>
+                        <string>You must first switch ON/OFF MySQL</string>
                 </dict>
                 <dict>
                         <key>cell</key>
@@ -46,11 +34,41 @@
                 <dict>
                         <key>cell</key>
                         <string>PSGroupCell</string>
+                        <key>label</key>
+                        <string>After 2 second you can switch ON/OFF Lighttpd</string>
+                </dict>
+                <dict>
+                        <key>cell</key>
+                        <string>PSSwitchCell</string>
+                        <key>default</key>
+                        <true/>
+                        <key>defaults</key>
+                        <string>com.atv.lighttpd_mysql</string>
+                        <key>key</key>
+                        <string>lighttpd_Enabled</string>
+                        <key>label</key>
+                        <string>Enable Lighttpd Server</string>
+                </dict>
+                <dict>
+                        <key>cell</key>
+                        <string>PSGroupCell</string>
+                        <key>label</key>
+                        <string>If you would like restart the server, please wait 10 second between OFF and ON switching.</string>
+                </dict>
+                <dict>
+                        <key>cell</key>
+                        <string>PSGroupCell</string>
+                        <key>footerText</key>
+                        <string>Did you already changed your MySQL root password?</string>
+                </dict>
+                <dict>
+                        <key>cell</key>
+                        <string>PSGroupCell</string>
                         <key>footerText</key>
                         <string>Lighttpd-atv and MySQL-atv Quick'n Dirty Activator 2012 by J.Anrugas</string>
                 </dict>
-        </array> 
-	 <key>title</key>
+        </array>
+         <key>title</key>
         <string>Lighttpd MySQL</string>
 </dict></plist>
 
