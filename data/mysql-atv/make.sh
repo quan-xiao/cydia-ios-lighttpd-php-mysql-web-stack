@@ -12,9 +12,10 @@ echo PKG_DEST = ${PKG_DEST}
 
 pkg:setup
 #pkg:autoconf
-autoconf-2.69
+#autoconf-2.69
 
-LD="${PKG_TARG}"-ld CC="${PKG_TARG}"-gcc CXX="${PKG_TARG}"-gcc pkg:configure ac_cv_path_HOSTNAME=/usr/bin/hostname ac_cv_path_PERL=no ac_cv_prog_OBJDUMP=no ac_cv_c_stack_direction=-1 ac_cv_sys_restartable_syscalls=yes mysql_cv_gcc_atomic_builtins=no --with-mysqld-user=daemon --with-mysqld-ldflags=-all-static --with-unix-socket-path=/tmp/mysql.sock --with-low-memory --disable-largefile --without-geometry --without-query-cache --without-man --without-bench --without-docs --sysconfdir=/etc --localstatedir=/usr/local/var --prefix=/usr/local --without-debug --with-innodb
+LD="${PKG_TARG}"-ld CC="${PKG_TARG}"-gcc CXX="${PKG_TARG}"-gcc pkg:configure ac_cv_path_HOSTNAME=/usr/bin/hostname ac_cv_path_PERL=no ac_cv_prog_OBJDUMP=no ac_cv_c_stack_direction=-1 ac_cv_sys_restartable_syscalls=yes mysql_cv_gcc_atomic_builtins=no --with-mysqld-user=daemon --with-mysqld-ldflags=-all-static --with-unix-socket-path=/tmp/mysql.sock --with-low-memory --disable-largefile --without-geometry --without-query-cache --without-man --without-bench --without-docs --sysconfdir=/etc --localstatedir=/usr/local/var --prefix=/usr/local --without-debug --with-innodb --with-ssl
+#--with-ssl="$(PKG_DEST_ openssl)"/usr  #use this if you need OpenSLL instead  of YaSSL 
 
 #copy needed and compiled executable files from the host system (Ubuntu 8.04.4 LTS Hardy Heron)
 cp ${PKG_DATA}/comp_err extra/

@@ -50,6 +50,33 @@ diff -r 391f12efb39f -r dde5518d580c configure
  # If the user specified CFLAGS, we won't add any optimizations
  if test -n "$SAVE_CFLAGS"
  then
+@@ -40567,19 +40567,19 @@
+    { (exit 1); exit 1; }; }
+   fi
+ 
+   # openssl-devel-0.9.6 requires dlopen() and we can't link staticly
+   # on many platforms (We should actually test this here, but it's quite
+   # hard to do as we are doing libtool for linking.)
+-  case "$CLIENT_EXTRA_LDFLAGS $MYSQLD_EXTRA_LDFLAGS" in
+-    *-all-static*)
+-    { { $as_echo "$as_me:$LINENO: error: You can't use the --all-static link option when using openssl." >&5
+-$as_echo "$as_me: error: You can't use the --all-static link option when using openssl." >&2;}
+-   { (exit 1); exit 1; }; }
+-    ;;
+-  esac
++#  case "$CLIENT_EXTRA_LDFLAGS $MYSQLD_EXTRA_LDFLAGS" in
++#    *-all-static*)
++#    { { $as_echo "$as_me:$LINENO: error: You can't use the --all-static link option when using openssl." >&5
++#$as_echo "$as_me: error: You can't use the --all-static link option when using openssl." >&2;}
++#   { (exit 1); exit 1; }; }
++#   ;;
++#  esac
+ 
+ 
+ 
+ 
+   NON_THREADED_CLIENT_LIBS="$NON_THREADED_CLIENT_LIBS $openssl_libs"
+ 
 @@ -48094,13 +48094,13 @@
    { { $as_echo "$as_me:$LINENO: error: in \`$ac_pwd':" >&5
  $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -95,4 +122,5 @@ diff -r 391f12efb39f -r dde5518d580c configure
  _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
+
 
