@@ -1,0 +1,7 @@
+Origin: iOS WebStack
+Label: iOS WebStack
+Suite: stable
+Version: 2.0.5
+Architectures: iphoneos-arm
+Components: main
+Description:- The One Click Solution -
