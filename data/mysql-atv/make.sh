@@ -34,7 +34,7 @@ make install DESTDIR="${PKG_DEST}" "$@"
 #delete not needed files for the .deb package
 rm -r "${PKG_DEST}"/usr/local/mysql-test
 rm -r "${PKG_DEST}"/usr/local/sql-bench
-rm -r "${PKG_DEST}"/usr/local/include
+#rm -r "${PKG_DEST}"/usr/local/include
 rm -r "${PKG_DEST}"/usr/local/lib/mysql/*.a
 
 
