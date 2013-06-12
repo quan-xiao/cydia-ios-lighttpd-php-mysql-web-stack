@@ -1,18 +1,18 @@
-A whole AppleTV Web Server Solution Stack Composition. Have a look at http://goo.gl/LXfUB .
+A whole AppleTV Web Server Solution Stack Composition. Have a look at http://ios-webstack.tk .
  A whole AppleTV Web Server Solution Stack Composition.
  
  PLEASE DO NOT INSTALL THIS PACKAGES ON YOUR iPHONE, iPOD OR iPAD!
  YOUR BATTERY WILL BE EMPTY VERY SOON! INSTEAD USE THE CYDIA PACKAGE BELOW:
  'ios-lighttpd-php-mysql'
- You will get more information here: http://goo.gl/LXfUB
+ You will get more information here: http://ios-webstack.tk
   
  If you are not familiar in operation of console and shell scripting please don't install this package!
  
  This cydia package will install some sub cydia packages like:
  
- PHP54 v5.4.9
+ PHP54 v5.4.16
  Lighttpd-atv v1.4.31
- MySQL-atv v5.1.66
+ MySQL-atv v5.1.70
  
  The localtion of your web files is /var/www
  If you need write permission to a www file or folder, change the owner to 'daemon:_www'
@@ -51,5 +51,5 @@ A whole AppleTV Web Server Solution Stack Composition. Have a look at http://goo
  killall lighttpd
  killall mysqld
  
- If you would like to get more package information, please have a look at http://goo.gl/LXfUB .
+ If you would like to get more package information, please have a look at http://ios-webstack.tk .
  
