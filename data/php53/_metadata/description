@@ -1,4 +1,4 @@
-The overly popular HTML templating language PHP. Have a look at http://goo.gl/LXfUB .
+The overly popular HTML templating language PHP. Have a look at http://ios-webstack.tk .
  The overly popular HTML templating language PHP.
 
  This packages includes PHP 5.3.x with GD and MySQL support (PDO and mysqli).
@@ -17,6 +17,6 @@ The overly popular HTML templating language PHP. Have a look at http://goo.gl/LX
     
  They includes this, the above mentioned packages, example config files and daemon launchers for a whole web server solution stack.
  
- If you are interest in the package differences, have a look on http://goo.gl/LXfUB .
+ If you are interest in the package differences, have a look on http://ios-webstack.tk .
  
 
