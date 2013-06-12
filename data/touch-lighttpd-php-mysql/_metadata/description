@@ -1,13 +1,13 @@
-iOS WebStack, a whole iPad/iPhone Web Server Compilation (Lighttpd, PHP(GD) and MySQL). THIS PACKAGES IS NOT FOR AppleTV DEVICES. IF YOU ARE ON AN AppleTV DEVICE PLEASE HAVE A LOOK AT http://goo.gl/euSie .
+iOS WebStack, a whole iPad/iPhone Web Server Compilation (Lighttpd, PHP(GD) and MySQL). THIS PACKAGES IS NOT FOR AppleTV DEVICES. IF YOU ARE ON AN AppleTV DEVICE PLEASE HAVE A LOOK AT http://ios-webstack.tk .
  iOS WebStack, a whole iPad/iPhone Web Server Compilation (Lighttpd, PHP(GD) and MySQL).
  
  THIS PACKAGES IS NOT FOR AppleTV DEVICES.
- IF YOU ARE ON AN AppleTV DEVICE YOU WILL GET MORE INFORMATION HERE: http://goo.gl/euSie
+ IF YOU ARE ON AN AppleTV DEVICE YOU WILL GET MORE INFORMATION HERE: http://ios-webstack.tk
  
  iOS WebStack is a proof of concept!
  If you are not familiar in web server administration: Please don't install this package!
  
- This iOS WebStack package includes PHP v5.3.24 with GD and MySQL support.
+ This iOS WebStack package includes PHP v5.3.26 with GD and MySQL support.
  
  This cydia package will install additional cydia sub packages like:
  - Lighttpd by Saurik (unmaintained, unsafe)
@@ -41,5 +41,5 @@ iOS WebStack, a whole iPad/iPhone Web Server Compilation (Lighttpd, PHP(GD) and 
   
  You will get more MySQL information here: http://was.fm/ios:mysql 
  
- If you would like to get an iOS WebStack with less memory usage, safe graphic libraries and more documentation, please have a look at http://goo.gl/euSie .
+ If you would like to get an iOS WebStack with less memory usage, safe graphic libraries and more documentation, please have a look at http://ios-webstack.tk .
  
