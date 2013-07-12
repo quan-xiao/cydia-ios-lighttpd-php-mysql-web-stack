@@ -4,6 +4,11 @@ echo PKG_DATA = "${PKG_DATA}"
 echo PKG_DEST = "${PKG_DEST}"
 echo PKG_TARG = "${PKG_TARG}"
 
+#very bad hack to be sure that the packages _libpgsql_precompiled is there:
+cd ~/telesphoreo
+./make.sh _libpgsql_precompiled || true
+cd "${PKG_WORK}"
+
 pkg:setup
 
 #Cross compiling patch for msqlnd : http://chris.losari.org/2012/06/cross-compile-php-for-arm.html
