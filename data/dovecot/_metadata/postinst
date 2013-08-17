@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# Create User: dovecot
+# ====================
+fullname="Dovecot Systemuser"
+user="dovecot"
+group=$user
+uid="100"
+usercreated="no"
+echo "Check/Create $user user"
+if id -u $user >/dev/null 2>&1; then
+        usercreated="yes"
+        echo "$user user exists"
+else
+        echo "User $user does not exist. Creating $user user"
+        while [ "$usercreated" == "no" -a "$uid" -lt 1500 ]
+        do
+        echo "Check if uid $uid exist"
+        RESULT1=$(awk -F: -v U="$uid" '$3==U {print "yes";exit}' /etc/master.passwd)
+        RESULT2=$(awk -F: -v U="$uid" '$3==U {print "yes";exit}' /etc/passwd)
+        RESULT3=$(awk -F: -v U="$uid" '$3==U {print "yes";exit}' /etc/group)
+        if [ "$RESULT1" == "yes" ] || [ "$RESULT2" == "yes" ] || [ "$RESULT3" == "yes" ] ; then
+               uid=$[$uid+1]
+        else
+                echo "creating user $user on id $uid..."
+                gid=$uid
+                echo "$group:*:$gid:$user" >> /private/etc/group
+                echo "$user:*:$uid:$gid::0:0:$fullname:/var/empty:/usr/bin/false" >> /private/etc/master.passwd
+                echo "$user:*:$uid:$gid:$fullname:/var/empty:/usr/bin/false" >> /private/etc/passwd
+                usercreated="yes"
+                echo "User created."
+        fi
+        done
+fi
+
+
+# Create User: dovenull
+# =====================
+fullname="DoveNull Systemuser"
+user="dovenull"
+group=$user
+uid=$[$uid+1]
+usercreated="no"
+echo "Check/Create $user user"
+if id -u $user >/dev/null 2>&1; then
+        usercreated="yes"
+        echo "$user user exists"
+else
+        echo "User $user does not exist. Creating $user user"
+        while [ "$usercreated" == "no" -a "$uid" -lt 1500 ]
+        do
+        echo "Check if uid $uid exist"
+        RESULT1=$(awk -F: -v U="$uid" '$3==U {print "yes";exit}' /etc/master.passwd)
+        RESULT2=$(awk -F: -v U="$uid" '$3==U {print "yes";exit}' /etc/passwd)
+        RESULT3=$(awk -F: -v U="$uid" '$3==U {print "yes";exit}' /etc/group)
+        if [ "$RESULT1" == "yes" ] || [ "$RESULT2" == "yes" ] || [ "$RESULT3" == "yes" ] ; then
+               uid=$[$uid+1]
+        else
+                echo "creating user $user on id $uid..."
+                gid=$uid
+                echo "$group:*:$gid:$user" >> /private/etc/group
+                echo "$user:*:$uid:$gid::0:0:$fullname:/var/empty:/usr/bin/false" >> /private/etc/master.passwd
+                echo "$user:*:$uid:$gid:$fullname:/var/empty:/usr/bin/false" >> /private/etc/passwd
+                usercreated="yes"
+                echo "User created."
+        fi
+        done
+fi
+
+echo "End off Dovecot postinst script."
+
+exit 0
+

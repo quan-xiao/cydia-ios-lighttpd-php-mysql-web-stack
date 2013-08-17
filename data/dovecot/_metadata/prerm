@@ -1,0 +1,13 @@
+#!/bin/sh
+
+ if [ -f /Library/LaunchDaemons/com.atv.dovecot.plist  ]
+ then
+    launchctl unload -w /Library/LaunchDaemons/com.atv.dovecot.plist 2>&1 | true
+ fi
+
+ DOVECOT=`ps -ax | grep '[d]ovecot' | grep 'sbin' | awk '{ print $1 }'`
+ if [ "$DOVECOT" != "" ]; then
+  kill -s TERM $DOVECOT # 2>&1 | true
+ fi
+
+exit 0
