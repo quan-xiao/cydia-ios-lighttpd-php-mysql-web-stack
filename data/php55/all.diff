@@ -50,19 +50,20 @@ diff -r ed87dbb9034d -r 14d2b9c68a1a ext/phar/Makefile.frag
  install-pharcmd: pharcmd
 --- a/ext/opcache/config.m4	2013-03-27 20:31:13.000000000 +0200
 +++ b/ext/opcache/config.m4	2013-04-02 22:58:04.000000000 +0200
-@@ -323,44 +323,13 @@
+@@ -322,47 +322,12 @@
+   return 0;
  }
  ],dnl
      AC_DEFINE(HAVE_SHM_MMAP_FILE, 1, [Define if you have mmap() SHM support])
      msg=yes,msg=no,msg=no)
    AC_MSG_RESULT([$msg])
- 
+-
 -  AC_MSG_CHECKING(for known struct flock definition)
 -  dnl Copied from ZendAccelerator.h
 -  AC_TRY_RUN([
 -#include <fcntl.h>
 -#include <stdlib.h>
- 
+-
 -#ifndef ZEND_WIN32
 -extern int lock_file;
 -
@@ -88,7 +89,9 @@ diff -r ed87dbb9034d -r 14d2b9c68a1a ext/phar/Makefile.frag
 -# endif
 -#endif
 -int main() { return 0; }
--], [], [AC_MSG_ERROR([Don't know how to define struct flock on this system[,] set --enable-opcache=no])], [])
+-],
+-[AC_MSG_RESULT([done])],
+-[AC_MSG_ERROR([Don't know how to define struct flock on this system[,] set --enable-opcache=no])], [])
    
    PHP_NEW_EXTENSION(opcache,
  	ZendAccelerator.c \
