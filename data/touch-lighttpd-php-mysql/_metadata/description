@@ -7,7 +7,7 @@ iOS WebStack, a whole iPad/iPhone Web Server Compilation (Lighttpd, PHP(GD) and 
  iOS WebStack is a proof of concept!
  If you are not familiar in web server administration: Please don't install this package!
  
- This iOS WebStack package includes PHP v5.3.26 with GD and MySQL support.
+ This iOS WebStack package includes PHP v5.3.27 with GD and MySQL support.
  
  This cydia package will install additional cydia sub packages like:
  - Lighttpd by Saurik (unmaintained, unsafe)
