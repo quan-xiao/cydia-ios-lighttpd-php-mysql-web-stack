@@ -17,11 +17,3 @@ pkg:configure --prefix=/usr/local --sysconfdir=/etc --with-ssl=openssl --enable-
 pkg:make  
 pkg:install
 
-# Clean up
-rm ${PKG_DEST}/usr/local/lib/dovecot/dovecot-config
-rm ${PKG_DEST}/usr/local/lib/dovecot/*.la
-rm ${PKG_DEST}/usr/local/lib/dovecot/*.so
-rm ${PKG_DEST}/usr/local/lib/dovecot/doveadm -R
-rm ${PKG_DEST}/usr/local/lib/dovecot/auth -R
-rm ${PKG_DEST}/usr/local/include/dovecot -R
-
