@@ -1,0 +1,4 @@
+Encryption compatible with OpenPGP
+ GnuPG or GPG is a free alternative to the PGP suite of cryptographic software.
+ In this version (1.4.14) a lot of security vulnerabilities are fixed since Sauriks version 1.4.8
+ 
