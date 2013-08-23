@@ -1,0 +1,5 @@
+Synchronize IMAP4 and Maildir mailboxes
+ Synchronize IMAP4 and Maildir mailboxes
+ isync is a command line application which synchronizes local Maildir mailboxes with remote IMAP4 mailboxes, suitable for use in IMAP-disconnected mode. Multiple copies of the remote IMAP4 mailboxes can be maintained, and all flags are synchronized.
+ 
+ While isync is the project name, mbsync is the current executable name; this change was necessary because of massive changes in the user interface. An isync executable still exists; it is a compatibility wrapper around mbsync.
