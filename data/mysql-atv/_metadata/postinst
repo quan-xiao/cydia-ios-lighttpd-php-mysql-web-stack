@@ -9,6 +9,8 @@ then
 
  echo " "
  echo " "
+else 
+ rm /etc/com.atv.mysql.my.cnf
 fi
 
 if [ ! -d /var/mysql/mysql ]
