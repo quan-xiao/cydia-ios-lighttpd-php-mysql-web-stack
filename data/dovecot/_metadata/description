@@ -4,5 +4,3 @@ Dovecot is an open source IMAP and POP3 email server
 
  Instead of Fetchmail you can use 'mpop'.
  
- The command 'dovecot --build-options' show you the build options.
- 

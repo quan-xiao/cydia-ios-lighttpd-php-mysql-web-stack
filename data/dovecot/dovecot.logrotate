@@ -1,0 +1,10 @@
+/var/log/dovecot/*.log {
+  missingok
+  notifempty
+  delaycompress
+  sharedscripts
+  postrotate
+    /usr/local/bin/doveadm log reopen
+  endscript
+}
+

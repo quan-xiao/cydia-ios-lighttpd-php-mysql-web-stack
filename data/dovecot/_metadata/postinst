@@ -67,7 +67,22 @@ else
         done
 fi
 
-echo "End off Dovecot postinst script."
+ #During a package upgrade, the packages scripts will stop and don't restart 'dovecot'
+ #Therefore we have to restart it again .... But just if the plist exists.
+ if [ -f /Library/LaunchDaemons/com.atv.dovecot.plist ]
+ then
+  launchctl load -w /Library/LaunchDaemons/com.atv.dovecot.plist
+ else
+  DOVECOT=`ps -ax | grep '[d]ovecot' | grep 'sbin' | awk '{ print $1 }'`
+  if [ "$DOVECOT" != "" ]; then
+   kill -s TERM $DOVECOT # 2>&1 | true
+  fi
+  echo " "
+  echo "You have to restart Dovecot!"
+  echo " "
+ fi
+
+
 
 exit 0
 

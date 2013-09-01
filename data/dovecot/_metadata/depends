@@ -1,1 +1,1 @@
-firmware(>= 3.0), gawk, adv-cmds
+firmware(>= 3.0), gawk, adv-cmds, gnupg
