@@ -1,14 +1,6 @@
 A POP3 client. It retrieves mail from POP3 mailboxes and forwards it. (Like fetchmail do)
  mpop is a POP3 client. It retrieves mail from POP3 mailboxes and forwards it. (Like fetchmail do)
 
- Features include:
- Delivery to mbox files, maildir folders, or a mail delivery agent (MDA). Delivery with SMTP is possible by using an appropriate MDA, for example msmtp.
- Header based mail filtering: filter junk mail before downloading it.
- Fast POP3 implementation using command pipelining.
- TLS/SSL support, including client certificates.
- Authentication methods USER/PASS, APOP, PLAIN, LOGIN, CRAM-MD5, EXTERNAL, GSSAPI, SCRAM-SHA-1, DIGEST-MD5, and NTLM.
- IPv6 support.
- Support for Internationalized Domain Names (IDN).
- Support for multiple POP3 accounts.
+ Delivery to mbox files, maildir folders, or a mail delivery agent (MDA/LDA).
  
- It works well with with Dovecot's `deliver` LDA.
+ It works well with the LDA of Dovecot.
