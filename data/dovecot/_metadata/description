@@ -1,6 +1,7 @@
 Dovecot is an open source IMAP and POP3 email server
  Dovecot is an open source IMAP and POP3 email server for UNIX-like systems, written with security primarily in mind.
- It's fast, simple to set up, requires no special administration and it uses very little memory.
-
- Instead of Fetchmail you can use 'mpop'.
  
+ The Packages is created for Apple TV 2 devices. 
+ It is not recommended to install a mail server on an iPhone, an iPad or an iPod.
+ 
+ Instead of Fetchmail you can use 'mpop'.
