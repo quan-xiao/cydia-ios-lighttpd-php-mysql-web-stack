@@ -1,0 +1,6 @@
+/var/log/emailrelay.log {
+  missingok
+  notifempty
+  copytruncate
+}
+

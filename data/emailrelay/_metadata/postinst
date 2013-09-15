@@ -1,0 +1,21 @@
+#!/bin/bash
+
+ #During a package upgrade, the packages scripts will stop and don't restart 'E-MailRelay'
+ #Therefore we have to restart it again .... But just if the plist exists.
+ if [ -f /Library/LaunchDaemons/com.atv.emailrelay.plist ]
+ then
+  launchctl load -w /Library/LaunchDaemons/com.atv.emailrelay.plist
+ else
+  EMAILRELAY=`ps -ax | grep '[d]ovecot' | grep 'sbin' | awk '{ print $1 }'`
+  if [ "$EMAILRELAY" != "" ]; then
+   kill -s TERM $EMAILRELAY # 2>&1 | true
+  fi
+  echo " "
+  echo "You have to restart E-MailRelay!"
+  echo " "
+ fi
+
+echo "End off E-MailRelay postinst script."
+
+exit 0
+

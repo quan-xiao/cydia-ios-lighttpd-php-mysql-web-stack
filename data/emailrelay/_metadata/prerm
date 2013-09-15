@@ -1,0 +1,13 @@
+#!/bin/sh
+
+ if [ -f /Library/LaunchDaemons/com.atv.emailrelay.plist  ]
+ then
+    launchctl unload -w /Library/LaunchDaemons/com.atv.emailrelay.plist 2>&1 | true
+ fi
+
+ EMAILRELAY=`ps -ax | grep '[d]ovecot' | grep 'sbin' | awk '{ print $1 }'`
+ if [ "$EMAILRELAY" != "" ]; then
+  kill -s TERM $EMAILRELAY # 2>&1 | true
+ fi
+
+exit 0
