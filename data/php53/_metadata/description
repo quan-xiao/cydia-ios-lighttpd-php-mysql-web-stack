@@ -10,7 +10,7 @@ The overly popular HTML templating language PHP. Have a look at http://ios-webst
  With the additional cydia packages 'mysql' and 'lighttpd' you are now free to host your own Content Management Systems (CMS), Blogs, Bulletin Boards, File Servers.
  Such as ownCloud, WebsiteBaker, Contao, TYPO3, WordPress, Joomla!, phpBB, miniBB, etc. 
    
- If you would like keep it simple then just install one of the AwkwardTV/BigBoss packages below:
+ If you would like keep it simple then just install one of the packages below:
  - 'atv-lighttpd-php-mysql' for AppleTV
  - 'ios-lighttpd-php-mysql' for iPhone/iPad
  - 'touch-lighttpd-php-mysql' for iPhone/iPad
