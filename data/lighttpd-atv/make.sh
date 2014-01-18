@@ -6,7 +6,7 @@ echo PKG_TARG = "${PKG_TARG}"
 
 pkg:setup
 
-autoconf-2.69
+#autoconf-2.69
 
 export XML_LIBS="-L"${PKG_ROOT}"/usr/lib -lxml2"
 export XML_CFLAGS=-I"${PKG_ROOT}"/usr/include/libxml2
@@ -19,7 +19,7 @@ export UUID_LIBS="-L"$(PKG_DEST_ uuid)/usr/lib" -luuid"
 pkg:configure   --libdir=/usr/lib/lighttpd --with-openssl --with-bzip2 --with-webdav-locks --with-webdav-props
 
 export CFLAGS='-O2 -mthumb'
-make
+pkg:make
 
 pkg:install
 
