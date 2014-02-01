@@ -1,5 +1,5 @@
 pkg:setup
-autoconf
+#autoconf
 pkg:configure --disable-strip --sysconfdir=/etc/ssh --disable-libutil --disable-utmp --disable-wtmp ac_cv_path_AR=arm-apple-darwin9-ar --with-md5-passwords --with-4in6 --with-maildir=no --
 pkg:make
 pkg:install INSTALL_SSH_RAND_HELPER=yes
