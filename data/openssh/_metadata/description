@@ -4,3 +4,8 @@ secure remote access between machines
  
  I also recommend the following package:
  'SSH Connect'
+ 
+ New in this version:
+ Automatically generation of non existing /etc/ssh/ssh_host_* key files during the installation.
+ 
+ 
