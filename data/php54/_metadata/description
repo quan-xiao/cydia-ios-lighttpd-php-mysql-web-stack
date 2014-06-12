@@ -1,6 +1,6 @@
 The overly popular HTML templating language PHP. Have a look at http://ios-webstack.tk .
  The overly popular HTML templating language PHP.
-
+ 
  This package includes PHP 5.4.x with GD and MySQL support (PDO and mysqli).
  
  This software was originally compiled for the AppleTV but it works on all iOS devices.
@@ -16,4 +16,4 @@ The overly popular HTML templating language PHP. Have a look at http://ios-webst
  They includes this, the above mentioned packages, example config files and daemon launchers for a whole web server solution stack.
  
  If you would like to get more package information, please have a look at http://ios-webstack.tk . 
- 
+
