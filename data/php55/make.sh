@@ -11,6 +11,10 @@ cd "${PKG_WORK}"
 
 pkg:setup
 
+
+mkdir -p ${PKG_DEST}/etc/php.d
+cp ${PKG_DATA}/load_opcache.ini ${PKG_DEST}/etc/php.d/
+
 #Cross compiling patch for msqlnd : http://chris.losari.org/2012/06/cross-compile-php-for-arm.html
 cd ext/mysqlnd
 sed -ie "s{ext/mysqlnd/php_mysqlnd_config.h{config.h{" mysqlnd_portability.h
@@ -22,7 +26,7 @@ export INSTALL_ROOT="${PKG_DEST}"
 autoconf 
 export CC="${PKG_TARG}"-gcc 
 export CFLAGS=-I"$(PKG_DEST_ _libfreetype)"/usr/include/freetype2   #we need this since version 5.5.8
-pkg:configure  --enable-opcache=no  --prefix=/usr/local --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --without-pear --enable-calendar=shared --with-iconv=shared,"${PKG_ROOT}"/usr --with-curl=shared,"$(PKG_DEST_ curl)"/usr --enable-exif=shared --with-gd=shared --enable-gd-native-ttf --with-jpeg-dir="$(PKG_DEST_ _libjpeg)"/usr --with-png-dir="$(PKG_DEST_ _libpng)"/usr --with-pdo --with-sqlite3=shared --with-pdo-sqlite=shared --enable-mysqlnd=shared --with-pdo-mysql=shared,mysqlnd --with-mysql=shared,mysqlnd --with-mysqli=shared,mysqlnd --enable-mbstring=shared --with-mcrypt=shared,"$(PKG_DEST_ _libmcrypt)"/usr --with-zlib-dir="${PKG_ROOT}"/usr --enable-zip=shared --with-bz2=shared --with-openssl=shared,"$(PKG_DEST_ openssl)"/usr --enable-gd-jis-conv --with-xsl=shared --with-libxml-dir="$(PKG_DEST_ _libxml2)"/usr --with-freetype-dir="$(PKG_DEST_ _libfreetype)"/usr --enable-soap=share --enable-ftp=shared --enable-sockets=shared --enable-pcntl=shared --with-pgsql=shared --with-pdo-pgsql=shared,"$(PKG_DEST_ _libpgsql_precompiled)"/usr/local --with-pgsql=shared --with-pdo-pgsql=shared,"$(PKG_DEST_ _libpgsql_precompiled)"/usr/local
+pkg:configure  --enable-opcache=yes  --prefix=/usr/local --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --without-pear --enable-calendar=shared --with-iconv=shared,"${PKG_ROOT}"/usr --with-curl=shared,"$(PKG_DEST_ curl)"/usr --enable-exif=shared --with-gd=shared --enable-gd-native-ttf --with-jpeg-dir="$(PKG_DEST_ _libjpeg)"/usr --with-png-dir="$(PKG_DEST_ _libpng)"/usr --with-pdo --with-sqlite3=shared --with-pdo-sqlite=shared --enable-mysqlnd=shared --with-pdo-mysql=shared,mysqlnd --with-mysql=shared,mysqlnd --with-mysqli=shared,mysqlnd --enable-mbstring=shared --with-mcrypt=shared,"$(PKG_DEST_ _libmcrypt)"/usr --with-zlib-dir="${PKG_ROOT}"/usr --enable-zip=shared --with-bz2=shared --with-openssl=shared,"$(PKG_DEST_ openssl)"/usr --enable-gd-jis-conv --with-xsl=shared --with-libxml-dir="$(PKG_DEST_ _libxml2)"/usr --with-freetype-dir="$(PKG_DEST_ _libfreetype)"/usr --enable-soap=share --enable-ftp=shared --enable-sockets=shared --enable-pcntl=shared --with-pgsql=shared --with-pdo-pgsql=shared,"$(PKG_DEST_ _libpgsql_precompiled)"/usr/local --with-pgsql=shared --with-pdo-pgsql=shared,"$(PKG_DEST_ _libpgsql_precompiled)"/usr/local
 
 #Bad news: It could be that 'configure' found the host system libxml2 libs and includes!
 #Regarding the define of LIBXML_VERSION we need the LIBXML2 include files
