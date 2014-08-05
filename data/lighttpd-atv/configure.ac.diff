@@ -1,5 +1,14 @@
 --- lighttpd-1.4.18/configure.ac	2007-08-29 00:49:56.000000000 +0000
 +++ lighttpd-1.4.18+iPhone/configure.ac	2008-10-09 02:21:21.000000000 +0000
+@@ -1,7 +1,7 @@
+ dnl                                               -*- Autoconf -*-
+ dnl Process this file with autoconf to produce a configure script.
+ AC_PREREQ(2.57)
+-AC_INIT([lighttpd], [1.4.32], [contact@lighttpd.net])
++AC_INIT([lighttpd], [1.4.35], [contact@lighttpd.net])
+ AC_CONFIG_SRCDIR([src/server.c])
+ AC_CONFIG_HEADER([config.h])
+ AC_CONFIG_MACRO_DIR([m4])
 @@ -293,22 +293,22 @@
  AC_MSG_CHECKING(for perl regular expressions support)
  AC_ARG_WITH(pcre, AC_HELP_STRING([--with-pcre],[Enable pcre support (default yes)]),
