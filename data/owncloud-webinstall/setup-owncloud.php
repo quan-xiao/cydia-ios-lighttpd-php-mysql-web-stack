@@ -199,7 +199,7 @@ class oc_setup {
 	static public function showcheckdependencies(){
 		$error=oc_setup::checkdependencies();
 		if($error=='') {
-			$txt='All ownCloud dependencies found.<br />The installtion takes a few minutes.';
+			$txt='All ownCloud dependencies found.<br />The file download and installtion to /var/www/owncloud takes a few minutes. Click Next and wait...';
 			oc_setup::showcontent('Dependency check',$txt,2);
 		}else{
 			$txt='Dependencies not found.<br />'.$error;
