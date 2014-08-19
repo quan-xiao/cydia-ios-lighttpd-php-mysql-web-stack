@@ -1,5 +1,7 @@
 pkg:setup
 autoconf-2.69
-pkg:configure ac_cv_file___dev_urandom_=yes --enable-ipv6 
-pkg:make
+
+pkg:configure --with-random=/dev/urandom --enable-ipv6 --with-openssl --with-ca-path=/etc/ssl/certs
+make test
+
 pkg:install
