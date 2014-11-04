@@ -1,0 +1,7 @@
+Simple HTTP file transfer client
+ Simple HTTP file transfer client
+ In this version (1.16) following security vulnerabilities are fixed since Sauriks version 1.11 :
+
+ o CVE-2014-4877 (CVSS Score 9.3)
+ o CVE-2010-2252 (CVSS Score 6.8)
+ o CVE-2009-3490 (CVSS Score 6.8)
