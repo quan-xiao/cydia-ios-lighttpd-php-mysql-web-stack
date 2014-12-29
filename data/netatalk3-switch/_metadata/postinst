@@ -1,0 +1,21 @@
+#!/bin/sh
+
+ #
+ # Starting Netatalk3 Switcher daemon  
+ #
+
+ /bin/launchctl load /Library/LaunchDaemons/com.atv.netatalk.switch.plist
+
+
+declare -a cydia
+cydia=($CYDIA)
+if [[ ${CYDIA+@} ]]; then
+    eval "echo 'finish:restart' >&${cydia[0]}"
+else
+    echo ""
+    echo "Please kill or restart 'Preferences'."
+fi
+
+
+exit 0
+

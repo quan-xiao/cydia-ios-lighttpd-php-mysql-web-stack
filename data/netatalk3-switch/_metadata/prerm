@@ -1,0 +1,21 @@
+#!/bin/sh
+
+ #
+ # Stop all used Daemons
+ #
+
+ /bin/launchctl unload  /Library/LaunchDaemons/com.atv.netatalk.switch.plist
+
+
+ #
+ # Start Netatalk Daemon. So it will be run without the switch
+ #
+ 
+ echo ""
+ echo "Starting Netatalk Daemon..."
+ launchctl load /Library/LaunchDaemons/com.atv.netatalk.dns-sd.plist
+ launchctl load /Library/LaunchDaemons/com.atv.netatalk.afpd.plist
+ echo "Done..."
+ echo ""
+
+exit 0
