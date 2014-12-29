@@ -1,0 +1,53 @@
+--- netatalk-3.1.7-a/etc/afpd/auth.c	2014-08-07 12:11:55.000000000 +0100
++++ netatalk-3.1.7-b/etc/afpd/auth.c	2014-12-13 20:44:06.000000000 +0100
+@@ -219,17 +219,12 @@
+ static int login(AFPObj *obj, struct passwd *pwd, void (*logout)(void), int expired)
+ {
+ #ifdef ADMIN_GRP
+     int admin = 0;
+ #endif /* ADMIN_GRP */
+ 
+-    if ( pwd->pw_uid == 0 ) {   /* don't allow root login */
+-        LOG(log_error, logtype_afpd, "login: root login denied!" );
+-        return AFPERR_NOTAUTH;
+-    }
+-
+     if (obj->cnx_cnt > obj->cnx_max) {
+         LOG(log_error, logtype_dsi, "login: too many connections, limit: %d", obj->cnx_max);
+         return AFPERR_MAXSESS;
+     }
+ 
+     LOG(log_note, logtype_afpd, "Login by %s (%s)",
+--- netatalk-3.1.7-a/libatalk/util/netatalk_conf.c	2014-08-29 11:32:19.000000000 +0100
++++ netatalk-3.1.7-b/libatalk/util/netatalk_conf.c	2014-12-15 00:35:44.000000000 +0100
+@@ -1471,13 +1471,13 @@
+         bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
+         if (bufsize == -1)          /* Value was indeterminate */
+             bufsize = 16384;        /* Should be more than enough */
+         EC_NULL( pwbuf = malloc(bufsize) );
+     }
+ 
+-    if (!(flags & lv_all) && obj->uid) {
++    if (!(flags & lv_all) && (obj->uid || (strcmp(obj->username,"root")==0)) ) {
+         ret = getpwuid_r(obj->uid, &pwent, pwbuf, bufsize, &pwresult);
+         if (pwresult == NULL) {
+             LOG(log_error, logtype_afpd, "load_volumes: getpwuid_r: %s", strerror(errno));
+             EC_FAIL;
+         }
+         pwresult = &pwent;
+@@ -1487,13 +1487,13 @@
+         if (!(flags & lv_force) && !volfile_changed(obj))
+             goto EC_CLEANUP;
+         have_uservol = 0;
+         for (vol = Volumes; vol; vol = vol->v_next) {
+             vol->v_deleted = 1;
+         }
+-        if (obj->uid && pwresult) {
++        if ((obj->uid || (strcmp(obj->username,"root")==0)) && pwresult) {
+             become_root();
+             ret = set_groups(obj, pwresult);
+             unbecome_root();
+             if (ret != 0) {
+                 LOG(log_error, logtype_afpd, "load_volumes: set_groups: %s", strerror(errno));
+                 EC_FAIL;
+

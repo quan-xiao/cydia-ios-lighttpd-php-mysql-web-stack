@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# Remove unused folder structure of older Netatalk package during the first installation
+#
+
+ if [ -d /etc/netatalk ]
+ then
+   rm -r /etc/netatalk
+ fi
+
+
+exit 0

@@ -1,0 +1,19 @@
+--- netatalk/include/atalk/acl.h	2014-07-03 06:16:05.000000000 +0100
++++ netatalk-b/include/atalk/acl.h	2014-12-13 02:05:08.000000000 +0100
+@@ -16,12 +16,15 @@
+ #define ATALK_ACL_H
+ 
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
+ #endif /* HAVE_CONFIG_H */
+ 
++#define O_NETATALK_ACL (O_NOFOLLOW << 1)
++#define O_IGNORE (O_NOFOLLOW << 2)
++
+ #ifdef HAVE_ACLS
+ 
+ #define O_NETATALK_ACL (O_NOFOLLOW << 1)
+ #define O_IGNORE (O_NOFOLLOW << 2)
+ 
+ #ifdef HAVE_SOLARIS_ACLS
+

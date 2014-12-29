@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ #
+ # Starting daemon afpd and dns-sd 
+ #
+
+ /bin/launchctl load /Library/LaunchDaemons/com.atv.netatalk.dns-sd.plist
+ /bin/launchctl load /Library/LaunchDaemons/com.atv.netatalk.afpd.plist
+
+exit 0
+

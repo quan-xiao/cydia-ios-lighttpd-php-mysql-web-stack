@@ -1,0 +1,25 @@
+#!/bin/sh
+
+ #
+ # Stop all used Daemons
+ #
+
+ /bin/launchctl unload  /Library/LaunchDaemons/com.atv.netatalk.dns-sd.plist
+ /bin/launchctl unload  /Library/LaunchDaemons/com.atv.netatalk.afpd.plist
+
+
+ #
+ # Cleanup Netatalk stuff. You don't need it anymore.
+ #
+ echo ""
+ echo "Netatalk: Cleaning up filesystem ..."
+ echo "Netatalk: Please wait a moment ..."
+ find / -name .AppleDB -type d -exec rm -rf {} \;
+ if [ -d /var/cache/netatalk3 ]; then
+   rm -r /var/cache/netatalk3
+ fi
+ echo ""
+ echo "Netatalk: Done ..."
+ echo ""
+
+exit 0
