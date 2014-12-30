@@ -12,14 +12,14 @@
  # Cleanup Netatalk stuff. You don't need it anymore.
  #
  echo ""
- echo "Netatalk: Cleaning up filesystem ..."
- echo "Netatalk: Please wait a moment ..."
+ echo "Netatalk3: Cleaning up filesystem ..."
+ echo "Netatalk3: Please wait a moment ..."
  find / -name .AppleDB -type d -exec rm -rf {} \;
  if [ -d /var/cache/netatalk3 ]; then
    rm -r /var/cache/netatalk3
  fi
  echo ""
- echo "Netatalk: Done ..."
+ echo "Netatalk3: Done ..."
  echo ""
 
 exit 0
