@@ -1,9 +1,7 @@
 Netatalk 3.x AFP File Server (iOS 8 ready)
  Netatalk 3.x AFP File Server (iOS 8 ready)
- 
  Netatalk is a freely-available Open Source AFP fileserver.
  A iOS system running Netatalk is capable of serving many Macintosh clients simultaneously as an AppleShare file server (AFP).
- 
  Recommended Packages
  - Netatalk 3.x Switch 
  - Insomnia
