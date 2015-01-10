@@ -1,9 +1,9 @@
 SSL library and cryptographic tools
  SSL library and cryptographic tools
- In this version (0.9.8za) following security vulnerabilities are fixed since Sauriks version 0.9.8y :
- 
- o CVE-2014-0224 
- o CVE-2014-0221
- o CVE-2014-0195
- o CVE-2014-3470
- o CVE-2014-0076
+ In this version (0.9.8zd) following security vulnerabilities are fixed since Sauriks version 0.9.8zc
+ o CVE-2014-3571
+ o CVE-2014-3569
+ o CVE-2014-3572
+ o CVE-2015-0204
+ o CVE-2014-8275
+ o CVE-2014-3570
