@@ -1,0 +1,10 @@
+ZNC is an IRC network bouncer.
+ ZNC is an IRC network bouncer.
+ 
+ ZNC is an advanced IRC bouncer (BNC) that is left connected so an IRC client can disconnect/reconnect without losing the chat session.
+ 
+ This package does not have an icon, nor should it. To use this package you must SSH into your device.
+
+ Be careful:
+ ZNC will drain your battery!
+ If you do not recognize this package you probably should not be using it.
