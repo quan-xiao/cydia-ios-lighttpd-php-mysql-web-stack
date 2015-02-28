@@ -1,1 +1,1 @@
-gawk, preferenceloader, grep, adv-cmds, com.ericasadun.utilities 
+gawk, preferenceloader, grep, adv-cmds, com.ericasadun.utilities, com.linusyang.localeutf8, logrotate, tk.ios-webstack.logrotate-daemonizer

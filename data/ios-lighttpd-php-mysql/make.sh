@@ -8,6 +8,7 @@ ${PKG_TARG}-gcc ${PKG_DATA}/mysql_launcher.c -o mysql_launcher
 
 
 mkdir -p ${PKG_DEST}/etc
+mkdir -p ${PKG_DEST}/etc/logrotate.d
 mkdir -p ${PKG_DEST}/usr/local/libexec
 mkdir -p ${PKG_DEST}/Library/LaunchDaemons
 mkdir -p ${PKG_DEST}/Library/PreferenceLoader/Preferences
@@ -21,6 +22,9 @@ cp ${PKG_DATA}/com.atv.web-stack.load_all.ini ${PKG_DEST}/etc/
 #Lighttpd
 cp  ${PKG_DATA}/com.atv.web-stack.lighttpd-atv.conf ${PKG_DEST}/etc/
 
+#logrotate config files
+cp ${PKG_DATA}/logrotate_lighttpd ${PKG_DEST}/etc/logrotate.d/lighttpd
+cp ${PKG_DATA}/logrotate_mysql ${PKG_DEST}/etc/logrotate.d/mysql
 
 #Preferenc Launcer lighttpd_mysql
 

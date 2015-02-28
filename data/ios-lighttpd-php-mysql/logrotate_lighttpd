@@ -1,0 +1,10 @@
+/var/log/lighttpd/*.log /var/log/lighttpd/*.err {
+missingok
+weekly
+minsize 1M
+notifempty
+rotate 4
+compress
+copytruncate
+}
+

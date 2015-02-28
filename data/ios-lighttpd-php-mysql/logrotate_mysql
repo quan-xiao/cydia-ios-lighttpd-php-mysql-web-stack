@@ -1,0 +1,10 @@
+/var/log/mysql.err /var/log/mysql.err.err /var/log/mysql.log {
+missingok
+weekly
+minsize 1M
+notifempty
+rotate 4
+compress
+copytruncate
+}
+
