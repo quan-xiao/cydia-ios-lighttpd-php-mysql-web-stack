@@ -10,6 +10,10 @@ then
  rm /etc/com.atv.web-stack.lighttpd-atv.conf
  rm /etc/com.atv.web-stack.php.ini
  rm /etc/com.atv.web-stack.load_all.ini
+
+ #Set permission of log files. Just to be safe...
+ chown -R daemon:_www /var/log/lighttpd
+ chown daemon:_www /var/log/mysql.*
 else
  echo "INSTALL atv-lighttpd-php-mysql"
  # If you install the package, you  need all the original config files.
@@ -41,27 +45,29 @@ else
  #Copy demo content to /var/www/index.html
  if [ -f /var/www/index.html ]
  then
-  echo""
+  echo " "
+  echo "I found an existing /var/www/index.html ...untouched... "
+  echo " "
  else
- echo '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>' > /var/www/index.html
- echo '<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>iOS Lighttpd-PHP-MySQL</title>' >> /var/www/index.html
- echo '</head><body><div style="text-align: center;"><h1>Yeah, it works!</h1><h2>' >> /var/www/index.html
- echo 'Now you can safeguard your MySQL installation with a few steps.<br>' >> /var/www/index.html
- echo 'The tool <a target="_blank" href="adminer.php?server=localhost">Adminer</a> will help you. Please click <a' >> /var/www/index.html
- echo ' target="_blank" href="adminer.php?server=localhost&username=root&sql=DELETE%20FROM%20mysql.user%20WHERE%20User=&#39;root&#39;%20AND%20Host%20NOT%20IN%20(&#39;localhost&#39;,%20&#39;127.0.0.1&#39;,%20&#39;::1&#39;);%0ADELETE%20FROM%20mysql.user%20WHERE%20User=&#39;&#39;;%0ADROP%20DATABASE%20test;%0ADELETE%20FROM%20mysql.db%20WHERE%20Db=&#39;test&#39;%20OR%20Db=&#39;test\\_%&#39;;%0AFLUSH%20PRIVILEGES;"' >> /var/www/index.html
- echo ' >here</a> and then on the buttom &#39;execute&#39;.<br>In this way, the MySQL test database and a anonymous MySQL user are deleted.<br>' >> /var/www/index.html
- echo 'Only after that, you have to change the passwords for the MySQL <a target="_blank"' >> /var/www/index.html
- echo 'href="adminer.php?server=localhost&username=root&user=root&host=localhost">root user</a>.' >> /var/www/index.html
- echo '<br>' >> /var/www/index.html
- echo '<br>If you would like test your PHP configuration, please click <a target="_blank" href="phpinfo.php">here</a> and then have fun with:<br>' >> /var/www/index.html
- echo '<br>ownCloud, WordPress, Contao, Textpattern,TYPO3, Drupal, MadeSimple,<br>Symphony, WebsiteBacker, Joomla!, miniBB, MyBB, phpBB, phpMyForum<br>' >> /var/www/index.html
- echo 'or other web presences :-)</h2><h2><br>' >> /var/www/index.html
- echo 'The following web page will give you some more information:<br>' >> /var/www/index.html
- echo '<a target="_blank" href="http://ios-webstack.tk">' >> /var/www/index.html
- echo 'iOS-WebStack.tk</a>' >> /var/www/index.html
- echo '</h2><br><br><h2>If you like my iOS Web Stack Composition, please support <a ' >> /var/www/index.html
- echo 'href="http://www.supportunicef.org" target="_blank">UNICEF</a> with a small donation. Thank you.</h2>' >> /var/www/index.html
- echo '<br></div></body></html>' >> /var/www/index.html
+  echo '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>' > /var/www/index.html
+  echo '<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>iOS Lighttpd-PHP-MySQL</title>' >> /var/www/index.html
+  echo '</head><body><div style="text-align: center;"><h1>Yeah, it works!</h1><h2>' >> /var/www/index.html
+  echo 'Now you can safeguard your MySQL installation with a few steps.<br>' >> /var/www/index.html
+  echo 'The tool <a target="_blank" href="http://www.adminer.org">Adminer</a> will help you. First click <a' >> /var/www/index.html
+  echo ' target="_blank" href="adminer.php?server=localhost&username=root&sql=DELETE%20FROM%20mysql.user%20WHERE%20User=&#39;root&#39;%20AND%20Host%20NOT%20IN%20(&#39;localhost&#39;,%20&#39;127.0.0.1&#39;,%20&#39;::1&#39;);%0ADELETE%20FROM%20mysql.user%20WHERE%20User=&#39;&#39;;%0ADROP%20DATABASE%20test;%0ADELETE%20FROM%20mysql.db%20WHERE%20Db=&#39;test&#39;%20OR%20Db=&#39;test\\_%&#39;;%0AFLUSH%20PRIVILEGES;"' >> /var/www/index.html
+  echo ' >here</a> and then on the buttom &#39;execute&#39;.<br>In this way, the MySQL test database and a anonymous MySQL user are deleted.<br>' >> /var/www/index.html
+  echo 'Only after that, you have to <a target="_blank"' >> /var/www/index.html
+  echo 'href="adminer.php?server=localhost&username=root&user=root&host=localhost">set a password</a> for the MySQL root user.' >> /var/www/index.html
+  echo '<br>' >> /var/www/index.html
+  echo '<br>If you would like test your PHP configuration, please click <a target="_blank" href="phpinfo.php">here</a> and then have fun with:<br>' >> /var/www/index.html
+  echo '<br>ownCloud, WordPress, Contao, Textpattern,TYPO3, Drupal, MadeSimple,<br>Symphony, WebsiteBacker, Joomla!, miniBB, MyBB, phpBB, phpMyForum<br>' >> /var/www/index.html
+  echo 'Ba&#239;kal, or other web presences :-)</h2><h2><br>' >> /var/www/index.html
+  echo 'The following web page will give you some more information:<br>' >> /var/www/index.html
+  echo '<a target="_blank" href="http://ios-webstack.tk">' >> /var/www/index.html
+  echo 'iOS-WebStack.tk</a>' >> /var/www/index.html
+  echo '</h2><br><br><h2>If you like my Web Stack Composition, please support <a ' >> /var/www/index.html
+  echo 'href="http://www.supportunicef.org" target="_blank">UNICEF</a> or <a href="http://ios-webstack.tk/donation" target="_blank">me</a> with a small donation.<br>Thank you.</h2>' >> /var/www/index.html
+  echo '<br></div></body></html>' >> /var/www/index.html
  fi
 
  #Dobble Information
@@ -72,9 +78,40 @@ else
 
 fi
 
- #Start Daemons
- launchctl load -w /Library/LaunchDaemons/com.atv.lighttpd.plist
- launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
+
+
+# Bad hack for users with a 'PP Ghost' jailbroken iOS devicek.
+# Those devices will have a frong permission of the folder /var/run (mobile:mobile instead of root:daemon)
+# Following part will fix it.
+# But note, it is not a good idea to do some thing without to know why the permissions of /var/run are on mobile:mobile :-(
+
+echo " "
+echo "Checking permission of /var/run ..."
+#Get user and group permission of /var/run
+F_USER="$(stat -c %U /var/run)"
+F_GROUP="$(stat -c %G /var/run)"
+#Get needed group permission of /var/run
+N_GROUP="daemon"
+#Checking for 'PP Ghost' or similar jailbreak tool with wrong /var/run premission.
+if [ "$F_GROUP" == "$N_GROUP" ]
+then
+ echo "Found a normal jailbreak."
+ echo "Nothing to change. Good!"
+else
+ echo "PP Ghost or similar jailbreak found..."
+ echo "Changing permission of /var/run from $F_USER:$F_GROUP to $F_USER:$N_GROUP"
+ echo "Add write permission for group $N_GROUP" 
+ chown :$N_GROUP /var/run
+ chmod g+w /var/run
+ echo "...done"
+fi
+echo " "
+#end of PP Ghost hack
+
+
+#Start Daemons
+launchctl load -w /Library/LaunchDaemons/com.atv.lighttpd.plist
+launchctl load -w /Library/LaunchDaemons/com.atv.mysql.plist
 
 
 exit 0

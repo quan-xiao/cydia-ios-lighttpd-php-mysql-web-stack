@@ -6,6 +6,7 @@ echo PKG_TARG = "${PKG_TARG}"
 
 
 mkdir -p ${PKG_DEST}/etc
+mkdir -p ${PKG_DEST}/etc/logrotate.d
 mkdir -p ${PKG_DEST}/Library/LaunchDaemons
 mkdir -p ${PKG_DEST}/var/www
 
@@ -16,6 +17,10 @@ cp ${PKG_DATA}/com.atv.web-stack.load_all.ini ${PKG_DEST}/etc/
 
 #Lighttpd
 cp  ${PKG_DATA}/com.atv.web-stack.lighttpd-atv.conf ${PKG_DEST}/etc/
+
+#logrotate config files
+cp ${PKG_DATA}/logrotate_lighttpd ${PKG_DEST}/etc/logrotate.d/lighttpd
+cp ${PKG_DATA}/logrotate_mysql ${PKG_DEST}/etc/logrotate.d/mysql
 
 #Daemon
 cp ${PKG_DATA}/com.atv.lighttpd.plist ${PKG_DEST}/Library/LaunchDaemons

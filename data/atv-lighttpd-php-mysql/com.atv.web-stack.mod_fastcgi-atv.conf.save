@@ -1,0 +1,9 @@
+fastcgi.server = ( ".php" =>
+  ( "localhost" =>
+     (
+     "bin-path" => "/usr/local/bin/php-cgi",
+     "socket" => "/tmp/php.socket"
+     com.atv.web-stack.mod_fastcgi-atv.conf
+     )
+  )
+)
