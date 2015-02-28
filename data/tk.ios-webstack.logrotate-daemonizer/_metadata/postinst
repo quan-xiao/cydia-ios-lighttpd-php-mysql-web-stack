@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ #
+ # Starting launchd job  
+ #
+echo "Starting logrotate Daemon..."
+launchctl load /Library/LaunchDaemons/tk.ios-webstack.logrotate.plist
+echo "...done."
+exit 0
+

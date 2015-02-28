@@ -1,0 +1,10 @@
+The logrotate Daemonizere will daemonize the tool logrotate.
+ The logrotate Daemonizere will daemonize the tool logrotate.
+ Launchd will run the tool 'logrotate' each day at midnight.
+
+ Please use following config file:
+ /etc/logrotate.conf
+ 
+  
+ This package does not have an icon, nor should it.
+ If you do not recognize this package you probably should not be using it.

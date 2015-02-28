@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ #
+ # Stop all used Daemons
+ #
+
+echo "Stoping logrotate Daemon..."
+launchctl unload /Library/LaunchDaemons/tk.ios-webstack.logrotate.plist
+echo "...done."
+
+exit 0
