@@ -1,3 +1,6 @@
 logrotate is designed to ease administration of systems that generate large numbers of log files.
  logrotate is designed to ease administration of systems that generate large numbers of log files.
  It allows automatic rotation, compression, removal, and mailing of log files. Each log file may be handled daily, weekly, monthly, or when it grows too large.
+ 
+ This package does not have an icon, nor should it.
+ If you do not recognize this package you probably should not be using it.
