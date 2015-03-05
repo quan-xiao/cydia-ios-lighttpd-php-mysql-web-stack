@@ -1,0 +1,10 @@
+/var/log/curl {
+missingok
+weekly
+minsize 1M
+notifempty
+rotate 4
+compress
+copytruncate
+}
+
