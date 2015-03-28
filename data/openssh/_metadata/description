@@ -1,11 +1,7 @@
 secure remote access between machines
  OpenSSH (OpenBSD Secure Shell) is a set of computer programs providing encrypted communication sessions over a computer network using the SSH protocol.
- This version is newer than Saurik's version 6.1p1
- 
+ This version is newer than Saurik's version.
+ .
  I also recommend the following package:
  'SSH Connect'
- 
- New in this version:
- Automatically generation of non existing /etc/ssh/ssh_host_* key files during the installation.
- 
  
